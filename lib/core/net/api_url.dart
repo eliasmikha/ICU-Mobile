@@ -6,5 +6,8 @@ class APIUrls {
   static const BASE_URL = "https://auth-icu.herokuapp.com/";
 
   /// Urls
-  static const LOGIN_API = "api/auth/login";
+
+  // @ Account
+  static const LOGIN_API = "api/auth/login"; // post
+  static const REGISTER_API = 'registration/register'; // post
 }

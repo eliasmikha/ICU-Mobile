@@ -1,49 +1,32 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:starter_application/core/params/base_params.dart';
 
 class RegisterRequest extends BaseParams {
-  RegisterRequest(
-      {this.firstName,
-      this.lastName,
-      this.gender,
-      this.birthDate,
-      this.phoneNumber,
-      this.email,
-      this.password,
-      CancelToken? cancelToken})
-      : super(cancelToken: cancelToken!);
+  RegisterRequest({
+    this.name,
+    this.username,
+    this.gender,
+    this.dob,
+    this.phonenumber,
+    this.email,
+    this.password,
+    CancelToken? cancelToken,
+  }) : super(cancelToken: cancelToken!);
 
-  final String? firstName;
-  final String? lastName;
+  final String? name;
+  final String? username;
   final int? gender;
-  final String? birthDate;
-  final String? phoneNumber;
+  final String? dob;
+  final String? phonenumber;
   final String? email;
   final String? password;
 
-  factory RegisterRequest.fromJson(String str) =>
-      RegisterRequest.fromMap(json.decode(str));
-
-  String toJson() => json.encode(toMap());
-
-  factory RegisterRequest.fromMap(Map<String, dynamic> json) => RegisterRequest(
-        firstName: json["firstName"] == null ? null : json["firstName"],
-        lastName: json["lastName"] == null ? null : json["lastName"],
-        gender: json["gender"] == null ? null : json["gender"],
-        birthDate: json["birthDate"] == null ? null : json["birthDate"],
-        phoneNumber: json["phoneNumber"] == null ? null : json["phoneNumber"],
-        email: json["email"] == null ? null : json["email"],
-        password: json["password"] == null ? null : json["password"],
-      );
-
   Map<String, dynamic> toMap() => {
-        "firstName": firstName == null ? null : firstName,
-        "lastName": lastName == null ? null : lastName,
+        "name": name == null ? null : name,
+        "username": username == null ? null : username,
         "gender": gender == null ? null : gender,
-        "birthDate": birthDate == null ? null : birthDate,
-        "phoneNumber": phoneNumber == null ? null : phoneNumber,
+        "dob": dob == null ? null : dob,
+        "phonenumber": phonenumber == null ? null : phonenumber,
         "email": email == null ? null : email,
         "password": password == null ? null : password,
       };

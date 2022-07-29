@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:starter_application/core/errors/app_errors.dart';
+import 'package:starter_application/core/models/empty_response.dart';
 import 'package:starter_application/core/results/result.dart';
 import 'package:starter_application/features/account/data/datasources/iaccount_remote.dart';
 import 'package:starter_application/features/account/data/model/request/login_request.dart';
@@ -24,10 +25,10 @@ class AccountRepository extends IAccountRepository {
   }
 
   @override
-  Future<Result<AppErrors, RegisterEntity>> register(
+  Future<Result<AppErrors, EmptyResponse>> register(
     RegisterRequest registerRequest,
   ) async {
     final remote = await iAccountRemoteSource.register(registerRequest);
-    return execute<RegisterModel, RegisterEntity>(remoteResult: remote);
+    return executeForNoEntity(remoteResult: remote);
   }
 }

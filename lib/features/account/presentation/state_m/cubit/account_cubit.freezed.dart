@@ -21,7 +21,7 @@ mixin _$AccountState {
     required TResult Function() accountInit,
     required TResult Function() accountLoading,
     required TResult Function(LoginEntity loginEntity) loginLoaded,
-    required TResult Function(RegisterEntity registerEntity) registerLoaded,
+    required TResult Function(EmptyResponse registerEntity) registerLoaded,
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function() successLogout,
@@ -32,7 +32,7 @@ mixin _$AccountState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
   }) =>
@@ -42,7 +42,7 @@ mixin _$AccountState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
     required TResult orElse(),
@@ -140,7 +140,7 @@ class _$AccountInit implements AccountInit {
     required TResult Function() accountInit,
     required TResult Function() accountLoading,
     required TResult Function(LoginEntity loginEntity) loginLoaded,
-    required TResult Function(RegisterEntity registerEntity) registerLoaded,
+    required TResult Function(EmptyResponse registerEntity) registerLoaded,
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function() successLogout,
@@ -154,7 +154,7 @@ class _$AccountInit implements AccountInit {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
   }) {
@@ -167,7 +167,7 @@ class _$AccountInit implements AccountInit {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
     required TResult orElse(),
@@ -270,7 +270,7 @@ class _$AccountLoading implements AccountLoading {
     required TResult Function() accountInit,
     required TResult Function() accountLoading,
     required TResult Function(LoginEntity loginEntity) loginLoaded,
-    required TResult Function(RegisterEntity registerEntity) registerLoaded,
+    required TResult Function(EmptyResponse registerEntity) registerLoaded,
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function() successLogout,
@@ -284,7 +284,7 @@ class _$AccountLoading implements AccountLoading {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
   }) {
@@ -297,7 +297,7 @@ class _$AccountLoading implements AccountLoading {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
     required TResult orElse(),
@@ -425,7 +425,7 @@ class _$AccLoginLoaded implements AccLoginLoaded {
     required TResult Function() accountInit,
     required TResult Function() accountLoading,
     required TResult Function(LoginEntity loginEntity) loginLoaded,
-    required TResult Function(RegisterEntity registerEntity) registerLoaded,
+    required TResult Function(EmptyResponse registerEntity) registerLoaded,
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function() successLogout,
@@ -439,7 +439,7 @@ class _$AccLoginLoaded implements AccLoginLoaded {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
   }) {
@@ -452,7 +452,7 @@ class _$AccLoginLoaded implements AccLoginLoaded {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
     required TResult orElse(),
@@ -522,7 +522,7 @@ abstract class _$$AccRegisterLoadedCopyWith<$Res> {
   factory _$$AccRegisterLoadedCopyWith(
           _$AccRegisterLoaded value, $Res Function(_$AccRegisterLoaded) then) =
       __$$AccRegisterLoadedCopyWithImpl<$Res>;
-  $Res call({RegisterEntity registerEntity});
+  $Res call({EmptyResponse registerEntity});
 }
 
 /// @nodoc
@@ -544,7 +544,7 @@ class __$$AccRegisterLoadedCopyWithImpl<$Res>
       registerEntity == freezed
           ? _value.registerEntity
           : registerEntity // ignore: cast_nullable_to_non_nullable
-              as RegisterEntity,
+              as EmptyResponse,
     ));
   }
 }
@@ -555,7 +555,7 @@ class _$AccRegisterLoaded implements AccRegisterLoaded {
   const _$AccRegisterLoaded(this.registerEntity);
 
   @override
-  final RegisterEntity registerEntity;
+  final EmptyResponse registerEntity;
 
   @override
   String toString() {
@@ -586,7 +586,7 @@ class _$AccRegisterLoaded implements AccRegisterLoaded {
     required TResult Function() accountInit,
     required TResult Function() accountLoading,
     required TResult Function(LoginEntity loginEntity) loginLoaded,
-    required TResult Function(RegisterEntity registerEntity) registerLoaded,
+    required TResult Function(EmptyResponse registerEntity) registerLoaded,
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function() successLogout,
@@ -600,7 +600,7 @@ class _$AccRegisterLoaded implements AccRegisterLoaded {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
   }) {
@@ -613,7 +613,7 @@ class _$AccRegisterLoaded implements AccRegisterLoaded {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
     required TResult orElse(),
@@ -669,10 +669,10 @@ class _$AccRegisterLoaded implements AccRegisterLoaded {
 }
 
 abstract class AccRegisterLoaded implements AccountState {
-  const factory AccRegisterLoaded(final RegisterEntity registerEntity) =
+  const factory AccRegisterLoaded(final EmptyResponse registerEntity) =
       _$AccRegisterLoaded;
 
-  RegisterEntity get registerEntity => throw _privateConstructorUsedError;
+  EmptyResponse get registerEntity => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$AccRegisterLoadedCopyWith<_$AccRegisterLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -764,7 +764,7 @@ class _$AccountError implements AccountError {
     required TResult Function() accountInit,
     required TResult Function() accountLoading,
     required TResult Function(LoginEntity loginEntity) loginLoaded,
-    required TResult Function(RegisterEntity registerEntity) registerLoaded,
+    required TResult Function(EmptyResponse registerEntity) registerLoaded,
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function() successLogout,
@@ -778,7 +778,7 @@ class _$AccountError implements AccountError {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
   }) {
@@ -791,7 +791,7 @@ class _$AccountError implements AccountError {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
     required TResult orElse(),
@@ -901,7 +901,7 @@ class _$SuccessLogoutState implements SuccessLogoutState {
     required TResult Function() accountInit,
     required TResult Function() accountLoading,
     required TResult Function(LoginEntity loginEntity) loginLoaded,
-    required TResult Function(RegisterEntity registerEntity) registerLoaded,
+    required TResult Function(EmptyResponse registerEntity) registerLoaded,
     required TResult Function(AppErrors error, VoidCallback callback)
         accountError,
     required TResult Function() successLogout,
@@ -915,7 +915,7 @@ class _$SuccessLogoutState implements SuccessLogoutState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
   }) {
@@ -928,7 +928,7 @@ class _$SuccessLogoutState implements SuccessLogoutState {
     TResult Function()? accountInit,
     TResult Function()? accountLoading,
     TResult Function(LoginEntity loginEntity)? loginLoaded,
-    TResult Function(RegisterEntity registerEntity)? registerLoaded,
+    TResult Function(EmptyResponse registerEntity)? registerLoaded,
     TResult Function(AppErrors error, VoidCallback callback)? accountError,
     TResult Function()? successLogout,
     required TResult orElse(),

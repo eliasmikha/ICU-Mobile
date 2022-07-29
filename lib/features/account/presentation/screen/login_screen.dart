@@ -9,9 +9,13 @@ import 'package:starter_application/core/common/responsive/responsive_utils.dart
 
 import 'package:starter_application/core/common/utils/utils.dart';
 import 'package:starter_application/core/common/validators.dart';
+import 'package:starter_application/core/constants/app/app_constants.dart';
 import 'package:starter_application/core/navigation/nav.dart';
+import 'package:starter_application/core/theme/custom_theme_colors.dart';
+import 'package:starter_application/core/ui/clippers/headline_clipper.dart';
 import 'package:starter_application/core/ui/error_ui/error_viewer/error_viewer.dart';
 import 'package:starter_application/core/ui/screens/base_screen.dart';
+import 'package:starter_application/core/ui/widgets/custom_text_field.dart';
 import 'package:starter_application/features/account/data/model/request/login_request.dart';
 import 'package:starter_application/features/account/presentation/screen/register_screen.dart';
 import 'package:starter_application/features/home/presentation/screen/app_main_screen/app_main_screen.dart';
@@ -41,14 +45,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   bool _passwordSecure = true;
 
-  final _phoneOrEmailKey = new GlobalKey<FormFieldState<String>>();
-  final _passwordKey = new GlobalKey<FormFieldState<String>>();
-  final _phoneOrEmailController = TextEditingController(text: "elias");
-  final _passwordController = TextEditingController(text: "string");
+  final _phoneOrEmailKey = GlobalKey<FormFieldState<String>>();
+  final _passwordKey = GlobalKey<FormFieldState<String>>();
+  final _formKey = GlobalKey<FormState>();
 
-  bool turnPhoneOrEmailValidate = true;
-
-  bool turnPasswordValidate = true;
+  final _phoneOrEmailController = TextEditingController(text: "");
+  final _passwordController = TextEditingController(text: "");
 
   @override
   Widget build(BuildContext context) {
@@ -56,231 +58,162 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: ModalProgressHUD(
         inAsyncCall: _inAsyncCall,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: BlocListener<AccountCubit, AccountState>(
-            bloc: BlocProvider.of<AccountCubit>(context),
-            listener: (context, state) {
-              state.when(
-                accountInit: () {},
-                accountLoading: () {
-                  setState(() {
-                    _inAsyncCall = true;
-                  });
-                },
-                loginLoaded: (s) async {
-                  await LocalStorage.persistToken(s.token);
-                  setState(() {
-                    _inAsyncCall = false;
-                  });
-                  Nav.off(
-                    AppMainScreen.routeName,
-                    arguments: AppMainScreenParam(),
-                  );
-                },
-                registerLoaded: (_) {},
-                accountError: (error, callback) {
-                  setState(() {
-                    _inAsyncCall = false;
-                  });
-                  return ErrorViewer.showError(
-                    context: context,
-                    error: error,
-                    callback: callback,
-                  );
-                },
-                successLogout: () {},
-              );
-            },
-            child: Container(
-              height: ScreenUtil().screenHeight,
-              width: ScreenUtil().screenWidth,
-              child: getValueForOrientation(
-                context,
-                portrait: _buildPortrait(),
-                landscape: _buildLandscape(),
-              ),
-            ),
-          ),
+        child: BlocListener<AccountCubit, AccountState>(
+          bloc: BlocProvider.of<AccountCubit>(context),
+          listener: (context, state) {
+            state.when(
+              accountInit: () {},
+              accountLoading: () {
+                setState(() {
+                  _inAsyncCall = true;
+                });
+              },
+              loginLoaded: (s) async {
+                await LocalStorage.persistToken(s.token);
+                setState(() {
+                  _inAsyncCall = false;
+                });
+                Nav.off(
+                  AppMainScreen.routeName,
+                  arguments: AppMainScreenParam(),
+                );
+              },
+              registerLoaded: (_) {},
+              accountError: (error, callback) {
+                setState(() {
+                  _inAsyncCall = false;
+                });
+                return ErrorViewer.showError(
+                  context: context,
+                  error: error,
+                  callback: callback,
+                );
+              },
+              successLogout: () {},
+            );
+          },
+          child: _buildContent(),
         ),
       ),
     );
   }
 
-  Widget _buildPortrait() {
-    return Container(
-      height: ScreenUtil().screenHeight,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          64.verticalSpace,
-          Text(
-            S.current.welcome,
-            style: Theme.of(context).textTheme.bodyText1!,
-          ),
-          64.verticalSpace,
-          _buildPhoneNumberField(),
-          32.verticalSpace,
-          _buildPasswordField(),
-          64.verticalSpace,
-          _buildButtons(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildLandscape() {
-    return Row(
-      children: [
-        Container(
-          width: ScreenUtil().screenWidth * 0.6,
+  Widget _buildContent() {
+    return Form(
+      key: _formKey,
+      child: Container(
+        height: 1.sh,
+        width: 1.sw,
+        child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                S.current.welcome,
-                style: Theme.of(context).textTheme.bodyText1!,
+              _buildHeadline(),
+              Padding(
+                padding: AppConstants.screenPadding,
+                child: _buildEmailField(),
               ),
-              32.verticalSpace,
-              _buildPhoneNumberField(),
-              32.verticalSpace,
-              _buildPasswordField(),
+              40.verticalSpace,
+              Padding(
+                padding: AppConstants.screenPadding,
+                child: _buildPasswordField(),
+              ),
+              64.verticalSpace,
+              _buildButtons(),
+              40.verticalSpace,
             ],
           ),
         ),
-        32.horizontalSpace,
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      ),
+    );
+  }
+
+  Widget _buildHeadline() {
+    final themeData = Theme.of(context);
+    return ClipPath(
+      clipper: HeadlineClipper(),
+      child: Container(
+        width: 1.sw,
+        height: .4.sh,
+        color: themeData.colorScheme.primary,
+        padding: EdgeInsetsDirectional.only(
+          top: AppConstants.appbarHeight * 0.8,
+          start: AppConstants.screenPadding.left,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            64.verticalSpace,
-            CustomButton(
-              backgroundColor: Colors.green,
-              titleText: S.current.login,
-              textColor: Colors.black,
-              onPressed: () {
-                sendRequest();
-              },
-              padding: const EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 20,
+            Text(
+              'Welcome\nBack',
+              style: themeData.textTheme.headline2?.copyWith(
+                color: themeData.extension<CustomThemeColors>()!.textColor,
+                fontWeight: FontWeight.w600,
               ),
             ),
-            12.verticalSpace,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  S.current.or,
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                        color: Theme.of(context).primaryColor,
-                      ),
-                ),
-              ],
-            ),
-            32.verticalSpace,
-            CustomButton(
-              backgroundColor: Theme.of(context).colorScheme.primary,
-              titleText: S.current.signUp,
-              textColor: Theme.of(context).colorScheme.secondary,
-              onPressed: () {
-                unFocus();
-                Nav.to(RegisterScreen.routeName,
-                    arguments: RegisterScreenParam());
-              },
-              padding: const EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 20,
+            20.verticalSpace,
+            Text(
+              'Please Sign-in to continue!',
+              style: themeData.textTheme.bodyMedium?.copyWith(
+                color: themeData.extension<CustomThemeColors>()!.textColor,
               ),
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 
-  unFocus() {
+  void unFocus() {
     Utils.unFocus(context);
   }
 
   void sendRequest() {
     unFocus();
-    setState(() {
-      turnPhoneOrEmailValidate = true;
-      turnPasswordValidate = true;
-    });
-    if (_phoneOrEmailKey.currentState!.validate()) {
-      if (_passwordKey.currentState!.validate()) {
-        BlocProvider.of<AccountCubit>(context).login(
-          LoginRequest(
-            username: _phoneOrEmailController.text,
-            password: _passwordController.text,
-            cancelToken: cancelToken,
-          ),
-        );
-      }
+    if (_formKey.currentState!.validate()) {
+      BlocProvider.of<AccountCubit>(context).login(
+        LoginRequest(
+          username: _phoneOrEmailController.text,
+          password: _passwordController.text,
+          cancelToken: cancelToken,
+        ),
+      );
     }
   }
 
-  Widget _buildPhoneNumberField() {
-    return TextFormField(
-      key: _phoneOrEmailKey,
+  Widget _buildEmailField() {
+    return CustomTextField(
+      textKey: _phoneOrEmailKey,
       controller: _phoneOrEmailController,
-      textInputAction: TextInputAction.next,
       focusNode: myFocusNodeUserName,
-      decoration: InputDecoration(
-        labelText: S.current.userName,
-        helperText: "09X-XXX-XXXX",
-      ),
-      // validator: (value) {
-      //   if (turnPhoneOrEmailValidate) {
-      //     if (Validators.isValidPhoneNumber(value!))
-      //       return null;
-      //     else
-      //       return S.current.invalidPhoneNumber;
-      //   } else
-      //     return null;
-      // },
-      onFieldSubmitted: (term) {
+      labelText: "Email",
+      keyboardType: TextInputType.emailAddress,
+      onChanged: (value) {
+        _phoneOrEmailKey.currentState?.validate();
+      },
+      onFieldSubmitted: (_) {
         myFocusNodePassword.requestFocus();
       },
-      onChanged: (val) {
-        if (turnPhoneOrEmailValidate) {
-          setState(() {
-            turnPhoneOrEmailValidate = false;
-          });
-          _phoneOrEmailKey.currentState!.validate();
+      textInputAction: TextInputAction.next,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "required field! mustn't be empty";
+        } else {
+          return null;
         }
       },
     );
   }
 
   Widget _buildPasswordField() {
-    return TextFormField(
-      key: _passwordKey,
+    return CustomTextField(
+      textKey: _passwordKey,
       controller: _passwordController,
       textInputAction: TextInputAction.go,
       keyboardType: TextInputType.text,
       focusNode: myFocusNodePassword,
-      decoration: InputDecoration(
-        labelText: S.current.password,
-        suffixIcon: IconButton(
-            icon: Icon(
-              _passwordSecure ? Icons.visibility : Icons.visibility_off,
-              color: AppColors.accentColorLight,
-            ),
-            onPressed: () {
-              setState(() {
-                _passwordSecure = !_passwordSecure;
-              });
-            }),
-      ),
+      labelText: S.current.password,
       validator: (value) {
-        if (turnPasswordValidate) {
-          if (Validators.isValidPassword(value!))
-            return null;
-          else
-            return S.current.invalidPassword;
+        if (value == null || value.length < 5) {
+          return S.current.invalidPassword;
         } else
           return null;
       },
@@ -288,59 +221,50 @@ class _LoginScreenState extends State<LoginScreen> {
         sendRequest();
       },
       onChanged: (val) {
-        if (turnPasswordValidate) {
-          setState(() {
-            turnPasswordValidate = false;
-          });
-          _passwordKey.currentState!.validate();
-        }
+        _passwordKey.currentState!.validate();
       },
-      obscureText: _passwordSecure,
+      isPassword: true,
     );
   }
 
   Widget _buildButtons() {
-    return Column(
-      children: [
-        CustomButton(
-          backgroundColor: Colors.green,
-          titleText: S.current.login,
-          textColor: Colors.black,
-          onPressed: () {
-            sendRequest();
-          },
-          padding: const EdgeInsets.symmetric(
-            vertical: 10,
-            horizontal: 20,
+    final themeData = Theme.of(context);
+    return Padding(
+      padding: AppConstants.screenPadding,
+      child: Column(
+        children: [
+          CustomButton(
+            backgroundColor: themeData.buttonTheme.colorScheme!.primary,
+            titleText: S.current.login,
+            textColor: themeData.textTheme.button?.color,
+            onPressed: () {
+              sendRequest();
+            },
+            fixedSize: Size(1.sw, 50),
+            borderRadius: const Radius.circular(100),
           ),
-        ),
-        32.verticalSpace,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              S.current.or,
-              style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                    color: Theme.of(context).primaryColor,
-                  ),
+          32.verticalSpace,
+          Text(
+            "Don't have an account?",
+            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  color: themeData.textTheme.bodyText1?.color,
+                ),
+          ),
+          // 32.verticalSpace,
+          CustomButton(
+            backgroundColor: Colors.transparent,
+            titleText: S.current.signUp,
+            textStyle: themeData.textTheme.button?.copyWith(
+              color: themeData.colorScheme.secondary,
             ),
-          ],
-        ),
-        32.verticalSpace,
-        CustomButton(
-          backgroundColor: Theme.of(context).colorScheme.primary,
-          titleText: S.current.signUp,
-          textColor: Colors.black,
-          onPressed: () {
-            unFocus();
-            Nav.to(RegisterScreen.routeName, arguments: RegisterScreenParam());
-          },
-          padding: const EdgeInsets.symmetric(
-            vertical: 10,
-            horizontal: 20,
+            onPressed: () {
+              unFocus();
+              Nav.to(RegisterScreen.routeName,
+                  arguments: RegisterScreenParam());
+            },
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

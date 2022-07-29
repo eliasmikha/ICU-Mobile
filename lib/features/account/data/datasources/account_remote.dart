@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:starter_application/core/constants/enums/http_method.dart';
 import 'package:starter_application/core/errors/app_errors.dart';
+import 'package:starter_application/core/models/empty_response.dart';
 import 'package:starter_application/core/net/api_url.dart';
 import 'package:starter_application/features/account/data/model/request/login_request.dart';
 import 'package:starter_application/features/account/data/model/request/register_request.dart';
@@ -33,18 +34,18 @@ class AccountRemoteSource extends IAccountRemoteSource {
       converter: (json) => LoginModel.fromMap(json),
       method: HttpMethod.POST,
       url: APIUrls.LOGIN_API,
-      queryParameters: loginRequest.toMap(),
+      body: loginRequest.toMap(),
       cancelToken: loginRequest.cancelToken,
     );
   }
 
   @override
-  Future<Either<AppErrors, RegisterModel>> register(
+  Future<Either<AppErrors, EmptyResponse>> register(
       RegisterRequest registerRequest) async {
-    return await request<RegisterModel>(
-      converter: (json) => RegisterModel.fromMap(json),
+    return await request<EmptyResponse>(
+      converter: (json) => EmptyResponse.fromMap(json),
       method: HttpMethod.POST,
-      url: "ACCOUNT_REGISTER",
+      url: APIUrls.REGISTER_API,
       body: registerRequest.toMap(),
       cancelToken: registerRequest.cancelToken,
     );

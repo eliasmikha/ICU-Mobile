@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -6,8 +7,12 @@ class AppConstants {
   AppConstants._();
 
   // TODO: Add the name of the app
-  static const TITLE_APP_NAME = '';
-  static final screenPadding = 20.w;
+  static const TITLE_APP_NAME = 'ICU App';
+  // static final screenPadding = 20.w;
+  static const appbarHeight = 120.0;
+  static const screenPadding = EdgeInsets.symmetric(
+    horizontal: 20,
+  );
 
   /// Pagination constants
   static const paginationLimit = 10;

@@ -10,9 +10,7 @@ ThemeData _getLightTheme() {
     ),
     fontFamily: LanguageUtils.isLTR(AppConfig().appLanguage.languageCode)
         ? GoogleFonts.poppins().fontFamily
-        : AppConfig().appLanguage.toString() == AppConstants.LANG_AR
-            ? GoogleFonts.cairo().fontFamily
-            : GoogleFonts.notoNaskhArabic().fontFamily,
+        : GoogleFonts.cairo().fontFamily,
     textTheme: TextTheme(
       headline1: TextThemeStyles.headline1,
       headline2: TextThemeStyles.headline2,

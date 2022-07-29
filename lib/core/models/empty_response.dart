@@ -11,7 +11,7 @@ class EmptyResponse extends BaseModel {
   });
 
   factory EmptyResponse.fromMap(Map<String, dynamic> json) => EmptyResponse(
-        succeed: json["succeed"] ?? false,
+        succeed: json["success"] ?? false,
         message: json["message"] ?? "",
       );
 
