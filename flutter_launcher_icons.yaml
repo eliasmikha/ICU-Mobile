@@ -1,0 +1,6 @@
+# Command to run -> flutter pub run flutter_launcher_icons:main
+# For more attributes -> https://pub.dev/packages/flutter_launcher_icons#mag-attributes
+flutter_icons:
+  android: false
+  ios: true
+  image_path: "assets/images/png/app_logo.png"

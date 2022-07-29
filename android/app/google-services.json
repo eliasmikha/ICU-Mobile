@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "650972615567",
+    "project_id": "icu-project-abdc8",
+    "storage_bucket": "icu-project-abdc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650972615567:android:8048f5619ee0dd3b4ef1fa",
+        "android_client_info": {
+          "package_name": "com.jazara.icu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650972615567-pv3jhm22qa1vq6lb0nr4pbi52a5oramv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqP6iVx3lvW8DYUZ886NZI2pY_XDZWBOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650972615567-pv3jhm22qa1vq6lb0nr4pbi52a5oramv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

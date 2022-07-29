@@ -1,0 +1,186 @@
+name: starter_application
+description: Launch your new project in the clearest possible way :-).
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# Application version
+version: 1.0.1+2
+
+environment:
+  sdk: ">=2.17.3 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.5
+  # Localization dependency
+  intl: ^0.17.0
+  # State management
+  flutter_bloc: ^8.0.1
+  # A wrapper around InheritedWidget to make them easier to use and more reusable
+  provider: ^6.0.3
+  # Compare objects
+  equatable: ^2.0.3
+  # RX programing
+  rxdart: ^0.27.4
+  # Service locator
+  get_it: ^7.2.0
+  injectable: ^1.5.3
+  # Prints beautiful logs
+  logger: ^1.1.0
+  # Functional programming in Dart
+  dartz: ^0.10.1-nullsafety.1
+  # Shared preferences
+  shared_preferences: ^2.0.15
+  #  Http client for Dart
+  dio: ^4.0.6
+  # Pretty Dio logger is a Dio interceptor that logs network calls in a pretty, easy to read format
+  pretty_dio_logger: ^1.2.0-beta-1
+  # adapting screen and font size
+  flutter_screenutil: ^5.5.3+2
+  # Scroll component drop-down refresh
+  pull_to_refresh: ^2.0.0
+  # Launching a URL in the mobile platform. Supports iOS and Android.
+  url_launcher: ^6.1.4
+  # Simple widget wrapper to enable modal progress HUD
+  modal_progress_hud_nsn: ^0.2.1
+  # This Flutter plugin provides an API for querying information about an application package.
+  package_info: ^2.0.2
+  # Get device information
+  device_info: ^2.0.3
+  # Show native toast
+  fluttertoast: ^8.0.9
+  # A Flutter plugin for finding commonly used locations on the filesystem.
+  # Supports iOS, Android, Linux and MacOS. Not all methods are supported on all platforms.
+  path_provider: ^2.0.11
+  # A set of high-level APIs over PointyCastle for two-way cryptography.
+  encrypt: ^5.0.1
+  # Flutter Modal Bottom Sheet
+  modal_bottom_sheet: ^2.1.0
+  # Google supported fonts
+  google_fonts: ^3.0.1
+  # To render html tag as a widget
+  html_widgets: ^0.0.1+1
+  # Code generation for immutable classes with simple syntax
+  freezed_annotation: ^2.0.3
+  # Changing them with beautiful and easy way with animations
+  animated_theme_switcher:
+    path: ./lib/core/library/animated_theme_switcher-master
+  # Global error catcher stuff
+  # Sending mails
+  mailer: ^5.1.1
+  flutter_mailer: ^2.0.1
+  # Provides APIs for debugging and error logging
+  logging: ^1.0.2
+  # A crash reporting library for Dart that sends crash reports to Sentry.io.
+  sentry: ^6.6.0
+  # Rendering lottie animations
+  lottie: ^1.3.0
+  # A set of widgets that can be used to define a readable responsive UI for widgets
+  responsive_builder: ^0.4.2
+  # Determine the type of handheld device on Flutter,  Like if the device is a Tablet or is iPhoneX or later or has notch.
+  flutter_device_type: ^0.4.0
+  # Draw SVG files on a Flutter Widget.
+  flutter_svg: ^1.1.0
+  # React to keyboard visibility changes.
+  flutter_keyboard_visibility: ^5.2.0
+  # A flutter library to show images from the internet and keep them in the cache directory.
+  cached_network_image: ^3.2.1
+  # A package provides an easy way to add shimmer effect in Flutter project
+  shimmer: ^2.0.0
+  # get device id from android、ios、windows、linux、mac、web
+  platform_device_id: ^1.0.1
+  google_maps_flutter: ^2.1.7
+   # Clip your widgets with custom shapes provided.
+  clippy_flutter: ^2.0.0-nullsafety.1
+  # plugin that decodes encoded google polyline string into list of geo-coordinates
+  flutter_polyline_points: ^1.0.0
+  # Plugin to easily handle realtime location in iOS and Android
+  location: ^4.4.0
+  # Use this library to request permissions and check their status
+  permission_handler: ^10.0.0
+  # A library to get/listen on location changes in the background
+  # background_location: ^0.8.1
+  # A flutter package which contains a collection of some cool and awesome text animations.
+  animated_text_kit: ^4.2.2
+  # A flutter package which will help you to generate pin code fields with beautiful design and animations.
+  pin_code_fields: ^7.4.0
+  # Show snack bars without context
+  another_flushbar: ^1.10.29
+  # Add the dependency for the Firebase Core Flutter SDK
+  firebase_core: ^1.18.0
+  # A cross platform plugin for displaying local notifications.
+  flutter_local_notifications: ^9.2.0
+  firebase_messaging: ^11.4.2
+  # A library for creating locks to ensure mutual exclusion when running critical sections of code.
+  mutex: ^3.0.0
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # A build system for Dart code generation and modular compilation
+  build_runner: ^2.1.11
+  # Dependency injection code generator
+  injectable_generator: ^1.5.3
+  # Freezed package code generator
+  freezed: ^2.0.3+1
+  # Used in freezed package
+  json_serializable: ^6.2.0
+  # For more health code
+  linter: ^1.22.0
+  # Change native code splash
+  flutter_native_splash: ^2.2.3+1
+  # Change App Package Name with single command.
+  change_app_package_name: ^1.1.0
+  # A command-line tool which simplifies the task of updating your Flutter app's launcher icon.
+  flutter_launcher_icons: ^0.9.3
+
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/png/
+    - assets/images/png/error/
+    - assets/images/svg/
+    - assets/anim/lottie/
+    - assets/anim/lottie/error/
+
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
+
+
+# Enable intl translation and make name of it [Translation]
+flutter_intl:
+  enabled: true
+  class_name: S
