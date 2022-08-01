@@ -12,11 +12,19 @@ class AppMainScreenNotifier extends ScreenNotifier {
   final AppMainScreenParam param;
   final logoutCubit = AccountCubit();
   bool _isLoading = false;
+  final pageController = PageController();
+  int _selectedPage = 0;
 
   /// Getters and Setters
   bool get isLoading => _isLoading;
   set isLoading(bool value) {
     _isLoading = value;
+    notifyListeners();
+  }
+
+  int get selectedPage => _selectedPage;
+  set selectedPage(int value) {
+    _selectedPage = value;
     notifyListeners();
   }
 

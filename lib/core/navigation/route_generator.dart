@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:starter_application/core/navigation/navigation_service.dart';
 import 'package:starter_application/di/service_locator.dart';
+import 'package:starter_application/features/account/presentation/screen/confirm_account/confirm_account_screen.dart';
 import 'package:starter_application/features/account/presentation/screen/login_screen.dart';
 import 'package:starter_application/features/account/presentation/screen/register_screen.dart';
 import 'package:starter_application/features/home/presentation/screen/app_main_screen/app_main_screen.dart';
@@ -32,6 +33,11 @@ class NavigationRoute {
         return _getRoute<AppMainScreenParam>(
           settings: settings,
           createScreen: (param) => AppMainScreen(param: param),
+        );
+      case ConfirmAccountScreen.routeName:
+        return _getRoute<ConfirmAccountScreenParam>(
+          settings: settings,
+          createScreen: (param) => ConfirmAccountScreen(param: param),
         );
       default:
         // If there is no such named route in the switch statement, e.g. /third

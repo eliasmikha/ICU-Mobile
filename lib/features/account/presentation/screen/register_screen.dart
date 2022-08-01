@@ -7,7 +7,6 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:starter_application/core/common/app_colors.dart';
 
 import 'package:starter_application/core/common/utils/utils.dart';
-import 'package:starter_application/core/common/validators.dart';
 import 'package:starter_application/core/constants/enums/gender_enum.dart';
 import 'package:starter_application/core/navigation/animations/animated_route.dart';
 import 'package:starter_application/core/navigation/nav.dart';
@@ -15,8 +14,7 @@ import 'package:starter_application/core/ui/error_ui/error_viewer/error_viewer.d
 import 'package:starter_application/core/ui/screens/base_screen.dart';
 import 'package:starter_application/core/ui/widgets/custom_list_tile.dart';
 import 'package:starter_application/core/ui/widgets/dropdown/custom_dropdown.dart';
-import 'package:starter_application/features/account/data/model/request/register_request.dart';
-import 'package:starter_application/features/home/presentation/screen/app_main_screen/app_main_screen.dart';
+import 'package:starter_application/features/account/presentation/screen/confirm_account/confirm_account_screen.dart';
 import 'package:starter_application/generated/l10n.dart';
 
 import '../../../../core/constants/app/app_constants.dart';
@@ -55,8 +53,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _passwordKey = GlobalKey<FormFieldState<String>>();
   final _confirmPasswordKey = GlobalKey<FormFieldState<String>>();
   final _phoneNumberKey = GlobalKey<FormFieldState<String>>();
-  final _dobKey = GlobalKey();
-  final _genderKey = GlobalKey();
   final _formKey = GlobalKey<FormState>();
 
   // Controller
@@ -68,7 +64,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _phoneNumberController = TextEditingController();
 
   DateTime? _dateTime;
-  int? _gender;
   bool? _confirmedPassword;
   final ValueNotifier<GenderEnum?> _genderValue = ValueNotifier(null);
 
@@ -115,8 +110,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     _inAsyncCall = false;
                   });
                   Nav.off(
-                    AppMainScreen.routeName,
-                    arguments: AppMainScreenParam(),
+                    ConfirmAccountScreen.routeName,
+                    arguments: ConfirmAccountScreenParam(
+                      email: _emailController.text,
+                    ),
                   );
                 },
                 accountError: (e, c) {
@@ -204,6 +201,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SlidingAnimated(
               initialOffsetX: 1,
               intervalStart: 0.2,
+              intervalEnd: 0.3,
+              child: Padding(
+                padding: AppConstants.screenPadding,
+                child: _buildEmailField(),
+              ),
+            ),
+            32.verticalSpace,
+            SlidingAnimated(
+              initialOffsetX: 1,
+              intervalStart: 0.3,
               intervalEnd: 0.4,
               child: Padding(
                 padding: AppConstants.screenPadding,
@@ -214,7 +221,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SlidingAnimated(
               initialOffsetX: 1,
               intervalStart: 0.4,
-              intervalEnd: 0.6,
+              intervalEnd: 0.5,
               child: Padding(
                 padding: AppConstants.screenPadding,
                 child: _buildPasswordField(),
@@ -223,8 +230,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             32.verticalSpace,
             SlidingAnimated(
               initialOffsetX: 1,
-              intervalStart: 0.6,
-              intervalEnd: 0.8,
+              intervalStart: 0.5,
+              intervalEnd: 0.6,
               child: Padding(
                 padding: AppConstants.screenPadding,
                 child: _buildConfirmPasswordField(),
@@ -233,17 +240,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
             32.verticalSpace,
             SlidingAnimated(
               initialOffsetX: 1,
-              intervalStart: 0.8,
-              intervalEnd: 1,
+              intervalStart: 0.6,
+              intervalEnd: 0.7,
               child: Padding(
                 padding: AppConstants.screenPadding,
                 child: _buildGenderDropdown(),
               ),
             ),
             32.verticalSpace,
-            Padding(
-              padding: AppConstants.screenPadding,
-              child: _buildDateOfBirth(),
+            SlidingAnimated(
+              initialOffsetX: 2,
+              intervalStart: 0.7,
+              intervalEnd: 1,
+              child: Padding(
+                padding: AppConstants.screenPadding,
+                child: _buildDateOfBirth(),
+              ),
             ),
             128.verticalSpace,
             SlidingAnimated(
@@ -352,7 +364,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       controller: _phoneNumberController,
       textInputAction: TextInputAction.next,
       keyboardType: TextInputType.phone,
-      focusNode: myFocusNodeEmail,
+      focusNode: myFocusNodePhoneNumber,
       labelText: S.current.phone,
       onFieldSubmitted: (term) {
         myFocusNodePassword.requestFocus();
@@ -378,7 +390,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           return null;
       },
       onFieldSubmitted: (term) {
-        sendRequest();
+        myFocusNodeConfirmPassword.requestFocus();
       },
       onChanged: (val) {
         _passwordKey.currentState!.validate();
@@ -456,12 +468,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget _buildDateOfBirth() {
     return CustomListTile(
       padding: EdgeInsets.symmetric(
-        vertical: 50.h,
+        vertical: 40.h,
         horizontal: 50.w,
       ),
       border: Border.all(
         color: _dateTime == null ? AppColors.grey500 : AppColors.blue500,
-        width: 1,
+        width: 2,
       ),
       borderRadius: BorderRadius.zero,
       title: Text(
@@ -532,22 +544,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void sendRequest() {
-    unFocus();
+    // unFocus();
 
-    if (_formKey.currentState!.validate()) {
-      BlocProvider.of<AccountCubit>(context).register(
-        RegisterRequest(
-          name: _nameController.text,
-          username: _usernameController.text,
-          phonenumber: _phoneNumberController.text,
-          email: _emailController.text,
-          password: _passwordController.text,
-          dob: _dateTime?.toIso8601String(),
-          gender: mapGenderToInt(_genderValue.value),
-          cancelToken: cancelToken,
-        ),
-      );
-    }
+    // if (_formKey.currentState!.validate()) {
+    //   BlocProvider.of<AccountCubit>(context).register(
+    //     RegisterRequest(
+    //       name: _nameController.text,
+    //       username: _usernameController.text,
+    //       phonenumber: _phoneNumberController.text,
+    //       email: _emailController.text,
+    //       password: _passwordController.text,
+    //       dob: _dateTime?.toIso8601String(),
+    //       gender: mapGenderToInt(_genderValue.value),
+    //       cancelToken: cancelToken,
+    //     ),
+    //   );
+    // }
+    Nav.off(
+      ConfirmAccountScreen.routeName,
+      arguments: ConfirmAccountScreenParam(
+        email: _emailController.text,
+      ),
+    );
   }
 
   @override
@@ -559,10 +577,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     myFocusNodeEmail.dispose();
     myFocusNodePassword.dispose();
     myFocusNodeConfirmPassword.dispose();
+    myFocusNodePhoneNumber.dispose();
     _nameController.dispose();
     _usernameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
+    _phoneNumberController.dispose();
   }
 }

@@ -18,11 +18,11 @@ class LoginModel extends BaseModel<LoginEntity> {
 
   String toJson() => json.encode(toMap());
 
-  factory LoginModel.fromMap(Map<String, dynamic> json) => LoginModel(
-        user: json["user"] == null
+  factory LoginModel.fromMap(Map<String, dynamic>? json) => LoginModel(
+        user: json?["user"] == null
             ? null
-            : AccountModel.fromMap(json["user"]),
-        token: stringV(json["token"]),
+            : AccountModel.fromMap(json?["user"]),
+        token: stringV(json?["token"]),
       );
 
   Map<String, dynamic> toMap() => {
