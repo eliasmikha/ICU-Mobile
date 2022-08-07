@@ -18,6 +18,7 @@ import 'package:starter_application/core/ui/screens/base_screen.dart';
 import 'package:starter_application/core/ui/widgets/custom_text_field.dart';
 import 'package:starter_application/features/account/data/model/request/login_request.dart';
 import 'package:starter_application/features/account/presentation/screen/register_screen.dart';
+import 'package:starter_application/features/account/presentation/state_m/provider/profile_notifier.dart';
 import 'package:starter_application/features/home/presentation/screen/app_main_screen/app_main_screen.dart';
 import 'package:starter_application/generated/l10n.dart';
 
@@ -49,8 +50,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordKey = GlobalKey<FormFieldState<String>>();
   final _formKey = GlobalKey<FormState>();
 
-  final _phoneOrEmailController = TextEditingController(text: "");
-  final _passwordController = TextEditingController(text: "");
+  final _phoneOrEmailController = TextEditingController(text: "yassar");
+  final _passwordController = TextEditingController(text: "yassar");
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +71,9 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               loginLoaded: (s) async {
                 await LocalStorage.persistToken(s.token);
+                await context.read<ProfileNotifier>().setProfileInfo(
+                      profile: s.user,
+                    );
                 setState(() {
                   _inAsyncCall = false;
                 });
@@ -239,6 +243,10 @@ class _LoginScreenState extends State<LoginScreen> {
             textColor: themeData.textTheme.button?.color,
             onPressed: () {
               sendRequest();
+              // Nav.off(
+              //   AppMainScreen.routeName,
+              //   arguments: AppMainScreenParam(),
+              // );
             },
             fixedSize: Size(1.sw, 50),
             borderRadius: const Radius.circular(100),

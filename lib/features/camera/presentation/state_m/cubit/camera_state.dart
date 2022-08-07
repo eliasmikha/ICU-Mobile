@@ -10,4 +10,8 @@ class CameraState with _$CameraState {
     AppErrors error,
     VoidCallback callback,
   ) = CameraErrorState;
+
+	const factory CameraState.camerasListLoaded(
+		List<CameraEntity> cameraEntity,
+	) = CamerasListLoadedState;
 }

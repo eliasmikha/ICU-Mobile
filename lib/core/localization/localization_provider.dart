@@ -49,10 +49,8 @@ class LocalizationProvider extends ChangeNotifier {
       return Null;
     }
     String? languageCode = prefs.getString(SharedPreferenceKeys.KEY_LANGUAGE);
-    if (languageCode == AppConstants.LANG_KU)
-      _appLocale = const Locale('ar', 'IQ');
-    else
-      _appLocale = Locale(languageCode ?? AppConstants.LANG_EN);
+
+    _appLocale = Locale(languageCode ?? AppConstants.LANG_EN);
 
     return Null;
   }
@@ -65,11 +63,11 @@ class LocalizationProvider extends ChangeNotifier {
     _appLocale = type;
 
     if (type == const Locale(AppConstants.LANG_AR)) {
-      await prefs.setString(SharedPreferenceKeys.KEY_LANGUAGE, AppConstants.LANG_AR);
-    } else if (type == const Locale(AppConstants.LANG_EN)) {
-      await prefs.setString(SharedPreferenceKeys.KEY_LANGUAGE, AppConstants.LANG_EN);
+      await prefs.setString(
+          SharedPreferenceKeys.KEY_LANGUAGE, AppConstants.LANG_AR);
     } else {
-      await prefs.setString(SharedPreferenceKeys.KEY_LANGUAGE, AppConstants.LANG_KU);
+      await prefs.setString(
+          SharedPreferenceKeys.KEY_LANGUAGE, AppConstants.LANG_EN);
     }
     notifyListeners();
   }

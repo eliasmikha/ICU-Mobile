@@ -3,5 +3,6 @@
 
     <color name="colorPrimary">#4AD18D</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue">#0063AF</color>
 
 </resources>

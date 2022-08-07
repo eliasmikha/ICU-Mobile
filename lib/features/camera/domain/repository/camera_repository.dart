@@ -8,4 +8,11 @@ class CameraRepository extends ICameraRepository {
 
   CameraRepository(this.remoteDataSource);
   
+
+	@override
+	Future<Result<AppErrors, List<CameraEntity>>> getAllCameras() async {
+		return executeForList(
+			remoteResult: await remoteDataSource.getAllCameras(),
+		);
+	}
 }

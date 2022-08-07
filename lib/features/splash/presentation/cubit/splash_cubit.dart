@@ -18,10 +18,9 @@ class SplashCubit extends Cubit<SplashState> {
   void getSplash({CancelToken? cancelToken}) async {
     emit(const SplashState.loading());
 
-    // TODO : remove this line.
-    await Future.delayed(const Duration(seconds: 2));
-
-    final List<Result> results = await Future.wait([]);
+    final List<Result> results = await Future.wait([
+      
+    ]);
     final error = CubitUtils.checkError(results);
 
     if (error != null) {
@@ -44,29 +43,11 @@ class SplashCubit extends Cubit<SplashState> {
   //       callback: () => this.getHomeInitAndProfile(),
   //     ));
   //   } else {
-  //     if (int.parse(AppConfig().buildNumber!) <
-  //         ((result[1].data as AppUpdateEntity?)?.result?.lastSupportedVersion ??
-  //             -1)) {
-  //       emit(
-  //         SplashState.needUpdateError(
-  //           appLink:
-  //               (result[1].data as AppUpdateEntity?)?.result?.appLink ?? '',
-  //         ),
-  //       );
-  //     } else {
-  //       emit(
-  //         SplashState.loaded(
-  //           customersTypes: [],
-  //           checkAppVersion: int.parse(AppConfig().buildNumber!) <
-  //                   ((result[1].data as AppUpdateEntity?)
-  //                           ?.result
-  //                           ?.lastVersion ??
-  //                       -1)
-  //               ? result[1].data as AppUpdateEntity?
-  //               : null,
-  //         ),
-  //       );
-  //     }
+  //     emit(
+  //       SplashState.loaded(
+  //         SplashEntity(),
+  //       ),
+  //     );
   //   }
   // }
 }

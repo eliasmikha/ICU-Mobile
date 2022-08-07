@@ -4,14 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 import 'package:starter_application/core/common/app_config.dart';
+import 'package:starter_application/core/common/utils/utils.dart';
 import 'package:starter_application/core/constants/app/app_constants.dart';
 import 'package:starter_application/core/firebase/firebase_messaging.dart';
 import 'package:starter_application/core/ui/error_ui/error_viewer/error_viewer.dart';
 import 'package:starter_application/core/ui/widgets/restart_widget.dart';
 import 'package:starter_application/core/ui/widgets/system/double_tap_back_exit_app.dart';
 import 'package:starter_application/features/account/presentation/state_m/cubit/account_cubit.dart';
+import 'package:starter_application/features/branch/presentation/screen/branch_list/branch_list_screen.dart';
 import 'package:starter_application/features/home/presentation/screen/home/home_screen.dart';
+import 'package:starter_application/features/persons/presentation/screen/persons_list/persons_list_screen.dart';
 import '../../../../../core/ui/screens/base_screen.dart';
+import '../../../../more/presentation/screen/more/more_screen.dart';
 import '../../state_m/provider/app_main_screen_notifier.dart';
 
 class AppMainScreenParam {}
@@ -91,10 +95,13 @@ class _AppMainScreenState extends State<AppMainScreen> {
                         controller: sn.pageController,
                         children: [
                           HomeScreen(param: HomeScreenParam()),
-                          const Center(child: Text('Branches')),
-                          const Center(child: Text('Persons')),
-                          const Center(child: Text('Settings')),
+                          BranchListScreen(param: BranchListScreenParam()),
+                          PersonsListScreen(param: PersonsListScreenParam()),
+                          MoreScreen(param: MoreScreenParam()),
                         ],
+                        onPageChanged: (index) {
+                          sn.selectedPage = index;
+                        },
                       ),
                     ),
                     bottomNavigationBar: SizedBox(
@@ -115,7 +122,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
                             icon: Icon(
                               Icons.home,
                             ),
-                            label: 'Home',
+                            label: 'Cameras',
                           ),
                           BottomNavigationBarItem(
                             icon: Icon(

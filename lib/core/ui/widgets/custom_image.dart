@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -59,7 +60,8 @@ class CustomImage {
                     baseColor: shimmerBaseColor ?? Colors.black,
                     highlightColor: shimmerHighlightColor ?? Colors.black12,
                     child: SvgPicture.asset(
-                      AppConstants.SVG_IMAGE_PLACEHOLDER,
+                      placeholderAssetImage ??
+                          AppConstants.SVG_IMAGE_PLACEHOLDER,
                       width: width,
                       height: height,
                       fit: fit ?? BoxFit.contain,
@@ -94,7 +96,7 @@ class CustomImage {
             }
             return placeholderAssetImage == null
                 ? SvgPicture.asset(
-                    AppConstants.SVG_IMAGE_PLACEHOLDER,
+                    placeholderAssetImage ?? AppConstants.SVG_IMAGE_PLACEHOLDER,
                     width: width,
                     height: height,
                     fit: fit ?? BoxFit.contain,
@@ -202,5 +204,55 @@ class CustomImage {
         alignment: alignment,
       );
     }
+  }
+
+  static Widget file(
+    File file, {
+    Key? key,
+    double scale = 1.0,
+    Widget Function(BuildContext, Widget, int?, bool)? frameBuilder,
+    Widget Function(BuildContext, Object, StackTrace?)? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = false,
+    bool isAntiAlias = false,
+    FilterQuality filterQuality = FilterQuality.low,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.file(
+      file,
+      key: key,
+      scale: scale,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
   }
 }

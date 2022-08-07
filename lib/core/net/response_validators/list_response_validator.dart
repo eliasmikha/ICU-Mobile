@@ -6,10 +6,14 @@ import '../../../generated/l10n.dart';
 class ListResponseValidator extends ResponseValidator {
   @override
   void processData(dynamic data) {
-    if (!(data is List)) {
-      error =
-          AppErrors.customError(message:  S.current.notValidResponse);
-      errorMessage = S.current.notValidResponse;
+    if (!(data['result'] is List) || !(data["success"] ?? false)) {
+      if (data["error"]["message"] != null) {
+        error = AppErrors.customError(message: data["error"]["message"]);
+        errorMessage = data["error"]["message"];
+      } else {
+        error = AppErrors.customError(message: S.current.notValidResponse);
+        errorMessage = S.current.notValidResponse;
+      }
     }
   }
 }

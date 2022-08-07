@@ -191,7 +191,8 @@ class CustomDropdownState<T> extends State<CustomDropdown<T>> {
               InputDecoration(
                 contentPadding: widget.contentPadding ??
                     EdgeInsets.symmetric(
-                      horizontal: 15.w,
+                      vertical: 20.h,
+                      horizontal: 50.w,
                     ),
                 border: widget.border ?? _getBorder(),
                 errorBorder: widget.errorBorder ??

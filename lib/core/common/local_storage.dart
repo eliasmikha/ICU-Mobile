@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starter_application/core/constants/shared_preference/shared_preference_keys.dart';
+import 'package:starter_application/features/account/data/model/response/login_model.dart';
 
 class LocalStorage {
   static late SharedPreferences _sp;
@@ -39,6 +42,22 @@ class LocalStorage {
   /// persistFcmToken
   static Future<void> persistFcmToken(String token) async {
     await _sp.setString(SharedPreferenceKeys.KEY_FIREBASE_TOKEN, token);
+  }
+
+  static AccountModel? get profile {
+    try {
+      final jsonObject = _sp.getString(SharedPreferenceKeys.ACCOUNT_INFO_KEY);
+      return AccountModel.fromJson(jsonObject ?? '');
+    } catch (e) {
+      return null;
+    }
+  }
+
+  static Future<void> presistProfile(AccountModel? profile) async {
+    await _sp.setString(
+      SharedPreferenceKeys.ACCOUNT_INFO_KEY,
+      profile?.toJson() ?? '',
+    );
   }
 
   /// read authToken

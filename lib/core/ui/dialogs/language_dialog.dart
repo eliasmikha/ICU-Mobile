@@ -93,22 +93,6 @@ class LanguageDialogState extends State<LanguageDialog> {
                   });
                 },
               ),
-              RadioListTile<int>(
-                activeColor: Theme.of(context).primaryColor,
-                title: Text(
-                  AppConstants.LANG_KU_OUTPUT,
-                  style: TextStyle(
-                    fontFamily: GoogleFonts.notoNaskhArabic().fontFamily,
-                  ),
-                ),
-                groupValue: _selectedId,
-                value: 2,
-                onChanged: (index) {
-                  setState(() {
-                    _selectedId = index;
-                  });
-                },
-              ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,

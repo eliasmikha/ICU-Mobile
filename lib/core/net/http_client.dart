@@ -25,9 +25,9 @@ class HttpClient {
 
   HttpClient() {
     BaseOptions _options = BaseOptions(
-      connectTimeout: 15000,
-      receiveTimeout: 15000,
-      sendTimeout: 10000,
+      connectTimeout: 15000 * 10,
+      receiveTimeout: 15000 * 10,
+      sendTimeout: 10000 * 10,
       responseType: ResponseType.json,
       baseUrl: APIUrls.BASE_URL,
     );
@@ -220,7 +220,7 @@ class HttpClient {
         /// Here we send the data from response to Models factory
         /// to assign data as model
         try {
-          model = (response.data as List)
+          model = (response.data['result'] as List)
               .map((e) => ModelsFactory().createModel<T>(e))
               .toList();
         } catch (e) {

@@ -1,3 +1,6 @@
+import 'package:starter_application/core/net/create_model_interceptor/all_data_create_model_interceptor.dart';
+
+import '../request/model/camera_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import '../../../../core/constants/enums/http_method.dart';
@@ -8,4 +11,6 @@ part 'camera_remote.dart';
 
 abstract class ICameraRemoteSource extends RemoteDataSource {
  
+
+	Future<Either<AppErrors, List<CameraModel>>> getAllCameras();
 }

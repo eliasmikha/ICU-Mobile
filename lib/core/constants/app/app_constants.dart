@@ -7,7 +7,7 @@ class AppConstants {
   AppConstants._();
 
   static const TITLE_APP_NAME = 'ICU App';
-  static const appbarHeight = 120.0;
+  static const appbarHeight = 100.0;
   static const navbarHeight = 80.0;
   static const screenPadding = EdgeInsets.symmetric(
     horizontal: 20,
@@ -46,9 +46,14 @@ class AppConstants {
   /// Image
   static const LOGIN_BACKGROUND = "assets/png/login_background.jpg";
   static const REGISTER_BACKGROUND = "assets/png/register_background.png";
-  static const APP_LOGO = "assets/images/png/app_logo.png";
+  // static const APP_LOGO = "assets/images/png/app_logo.png";
   static const APP_FLUTTER_MARKER = "assets/images/png/flutter_marker.png";
   static const APP_USER_MARKER = "assets/images/png/user_marker.png";
+  static const IMAGE_PERSON_1 = 'assets/images/png/person1.jpg';
+  static const IMAGE_PERSON_2 = 'assets/images/png/person2.jpg';
+  static const IMAGE_PERSON_3 = 'assets/images/png/person3.jpg';
+  static const IMAGE_PERSON_4 = 'assets/images/png/person4.jpg';
+  static const APP_LOGO = 'assets/images/png/logo.png';
 
   /// Svg
   static const SVG_IMAGE_PLACEHOLDER =
@@ -70,7 +75,6 @@ class AppConstants {
   /// Languages
   static const LANG_AR = 'ar';
   static const LANG_EN = 'en';
-  static const LANG_KU = 'ar_IQ';
 
   /// Languages code & output
   static const LANG_AR_CODE = 'AR';
@@ -78,21 +82,11 @@ class AppConstants {
 
   static const LANG_AR_OUTPUT = 'العربية';
   static const LANG_EN_OUTPUT = 'English';
-  static const LANG_KU_OUTPUT = 'كردى';
 
   /// APP constants
   static const MENU_CHANGE_LANG = "assets/png/menu/change_lang.png";
   static const MENU_LOGOUT = "assets/png/menu/logout.png";
 
-  /// Mock Json API Token
-  static const MOCK_JSON_TOKEN = 'H6HWs31en2BV1yYbXpkARg';
-
-  ///Map Constants
-  static const API_KEY_GOOGLE_MAPS = 'AIzaSyAT9wA45sR_sIsLAdWUhw-wLGH_othLH7M';
-  static const API_MAP_DISTANCE =
-      "https://maps.googleapis.com/maps/api/distancematrix/json";
-  static const API_INITIAL_MAP_LOCATION = LatLng(33.510414, 36.278336);
-
-  // Verification Code Length.
+  /// Verification Code Length.
   static const OTP_LENGTH = 6;
 }

@@ -38,7 +38,7 @@ static void changeTheme(BuildContext context) async {
   AppConfig().themeMode = theme;
 }
 //TODO Make it request
-static void logout() async {
+static Future<void> logout() async {
   if (LocalStorage.hasToken) {
     await LocalStorage.deleteToken();
     await LocalStorage.deleteFcmToken();

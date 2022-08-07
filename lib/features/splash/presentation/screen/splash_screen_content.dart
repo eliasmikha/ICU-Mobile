@@ -34,6 +34,7 @@ class _SplashScreenContentState extends State<SplashScreenContent> {
     return Container(
       width: 1.0.sw,
       height: 1.0.sh,
+      color: const Color(0xff202648),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

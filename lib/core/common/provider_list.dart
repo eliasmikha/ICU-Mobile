@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:starter_application/core/localization/localization_provider.dart';
 import 'package:starter_application/features/account/presentation/state_m/cubit/account_cubit.dart';
+import 'package:starter_application/features/account/presentation/state_m/provider/profile_notifier.dart';
 
 /// Centralizing all app providers in one class to be easy to adjust and read
 class ApplicationProvider {
@@ -21,6 +22,11 @@ class ApplicationProvider {
 
     BlocProvider(
       create: (context) => AccountCubit(),
+      lazy: true,
+    ),
+
+    ChangeNotifierProvider(
+      create: (context) => ProfileNotifier(),
       lazy: true,
     ),
   ];

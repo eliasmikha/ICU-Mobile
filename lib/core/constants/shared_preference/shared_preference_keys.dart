@@ -8,6 +8,7 @@ class SharedPreferenceKeys {
   static const KEY_OLD_FIREBASE_TOKEN = 'old_firebase_token';
   static const KEY_FIRST_START = 'First_start';
   static const KEY_APP_THEME = 'appTheme';
+  static const ACCOUNT_INFO_KEY = 'account_INFO';
 
   static const REMOVE_KEYS_ON_LOGOUT = const [
     KEY_TOKEN,

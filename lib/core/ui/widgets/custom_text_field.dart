@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:starter_application/core/common/app_config.dart';
 
 import '../../common/app_colors.dart';
 
@@ -60,7 +61,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         labelText: widget.labelText,
         labelStyle: themeData.textTheme.labelMedium?.copyWith(
-          color: themeData.textSelectionTheme.selectionColor,
+          color: Colors.grey.shade800,
+          fontSize: 40.sp,
         ),
         errorMaxLines: 2,
         suffixIcon: widget.suffixIcon == null
@@ -85,6 +87,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
         errorBorder: errorBorder,
         focusedErrorBorder: errorBorder,
       ),
+      style: AppConfig().themeData.textTheme.bodyText1?.copyWith(
+            fontSize: 50.sp,
+            fontWeight: FontWeight.bold,
+          ),
       validator: widget.validator,
       onFieldSubmitted: widget.onFieldSubmitted,
       onChanged: widget.onChanged,
