@@ -24,6 +24,7 @@ mixin _$CameraState {
         cameraError,
     required TResult Function(List<CameraEntity> cameraEntity)
         camerasListLoaded,
+    required TResult Function() successAddCamera,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$CameraState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +42,7 @@ mixin _$CameraState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +52,7 @@ mixin _$CameraState {
     required TResult Function(CameraLoadingState value) cameraLoading,
     required TResult Function(CameraErrorState value) cameraError,
     required TResult Function(CamerasListLoadedState value) camerasListLoaded,
+    required TResult Function(SuccessAddCameraState value) successAddCamera,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +61,7 @@ mixin _$CameraState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +70,7 @@ mixin _$CameraState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +139,7 @@ class _$CameraInitState implements CameraInitState {
         cameraError,
     required TResult Function(List<CameraEntity> cameraEntity)
         camerasListLoaded,
+    required TResult Function() successAddCamera,
   }) {
     return cameraInit();
   }
@@ -144,6 +151,7 @@ class _$CameraInitState implements CameraInitState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
   }) {
     return cameraInit?.call();
   }
@@ -155,6 +163,7 @@ class _$CameraInitState implements CameraInitState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
     required TResult orElse(),
   }) {
     if (cameraInit != null) {
@@ -170,6 +179,7 @@ class _$CameraInitState implements CameraInitState {
     required TResult Function(CameraLoadingState value) cameraLoading,
     required TResult Function(CameraErrorState value) cameraError,
     required TResult Function(CamerasListLoadedState value) camerasListLoaded,
+    required TResult Function(SuccessAddCameraState value) successAddCamera,
   }) {
     return cameraInit(this);
   }
@@ -181,6 +191,7 @@ class _$CameraInitState implements CameraInitState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
   }) {
     return cameraInit?.call(this);
   }
@@ -192,6 +203,7 @@ class _$CameraInitState implements CameraInitState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
     required TResult orElse(),
   }) {
     if (cameraInit != null) {
@@ -252,6 +264,7 @@ class _$CameraLoadingState implements CameraLoadingState {
         cameraError,
     required TResult Function(List<CameraEntity> cameraEntity)
         camerasListLoaded,
+    required TResult Function() successAddCamera,
   }) {
     return cameraLoading();
   }
@@ -263,6 +276,7 @@ class _$CameraLoadingState implements CameraLoadingState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
   }) {
     return cameraLoading?.call();
   }
@@ -274,6 +288,7 @@ class _$CameraLoadingState implements CameraLoadingState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
     required TResult orElse(),
   }) {
     if (cameraLoading != null) {
@@ -289,6 +304,7 @@ class _$CameraLoadingState implements CameraLoadingState {
     required TResult Function(CameraLoadingState value) cameraLoading,
     required TResult Function(CameraErrorState value) cameraError,
     required TResult Function(CamerasListLoadedState value) camerasListLoaded,
+    required TResult Function(SuccessAddCameraState value) successAddCamera,
   }) {
     return cameraLoading(this);
   }
@@ -300,6 +316,7 @@ class _$CameraLoadingState implements CameraLoadingState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
   }) {
     return cameraLoading?.call(this);
   }
@@ -311,6 +328,7 @@ class _$CameraLoadingState implements CameraLoadingState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
     required TResult orElse(),
   }) {
     if (cameraLoading != null) {
@@ -413,6 +431,7 @@ class _$CameraErrorState implements CameraErrorState {
         cameraError,
     required TResult Function(List<CameraEntity> cameraEntity)
         camerasListLoaded,
+    required TResult Function() successAddCamera,
   }) {
     return cameraError(error, callback);
   }
@@ -424,6 +443,7 @@ class _$CameraErrorState implements CameraErrorState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
   }) {
     return cameraError?.call(error, callback);
   }
@@ -435,6 +455,7 @@ class _$CameraErrorState implements CameraErrorState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
     required TResult orElse(),
   }) {
     if (cameraError != null) {
@@ -450,6 +471,7 @@ class _$CameraErrorState implements CameraErrorState {
     required TResult Function(CameraLoadingState value) cameraLoading,
     required TResult Function(CameraErrorState value) cameraError,
     required TResult Function(CamerasListLoadedState value) camerasListLoaded,
+    required TResult Function(SuccessAddCameraState value) successAddCamera,
   }) {
     return cameraError(this);
   }
@@ -461,6 +483,7 @@ class _$CameraErrorState implements CameraErrorState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
   }) {
     return cameraError?.call(this);
   }
@@ -472,6 +495,7 @@ class _$CameraErrorState implements CameraErrorState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
     required TResult orElse(),
   }) {
     if (cameraError != null) {
@@ -571,6 +595,7 @@ class _$CamerasListLoadedState implements CamerasListLoadedState {
         cameraError,
     required TResult Function(List<CameraEntity> cameraEntity)
         camerasListLoaded,
+    required TResult Function() successAddCamera,
   }) {
     return camerasListLoaded(cameraEntity);
   }
@@ -582,6 +607,7 @@ class _$CamerasListLoadedState implements CamerasListLoadedState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
   }) {
     return camerasListLoaded?.call(cameraEntity);
   }
@@ -593,6 +619,7 @@ class _$CamerasListLoadedState implements CamerasListLoadedState {
     TResult Function()? cameraLoading,
     TResult Function(AppErrors error, VoidCallback callback)? cameraError,
     TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
     required TResult orElse(),
   }) {
     if (camerasListLoaded != null) {
@@ -608,6 +635,7 @@ class _$CamerasListLoadedState implements CamerasListLoadedState {
     required TResult Function(CameraLoadingState value) cameraLoading,
     required TResult Function(CameraErrorState value) cameraError,
     required TResult Function(CamerasListLoadedState value) camerasListLoaded,
+    required TResult Function(SuccessAddCameraState value) successAddCamera,
   }) {
     return camerasListLoaded(this);
   }
@@ -619,6 +647,7 @@ class _$CamerasListLoadedState implements CamerasListLoadedState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
   }) {
     return camerasListLoaded?.call(this);
   }
@@ -630,6 +659,7 @@ class _$CamerasListLoadedState implements CamerasListLoadedState {
     TResult Function(CameraLoadingState value)? cameraLoading,
     TResult Function(CameraErrorState value)? cameraError,
     TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
     required TResult orElse(),
   }) {
     if (camerasListLoaded != null) {
@@ -647,4 +677,129 @@ abstract class CamerasListLoadedState implements CameraState {
   @JsonKey(ignore: true)
   _$$CamerasListLoadedStateCopyWith<_$CamerasListLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessAddCameraStateCopyWith<$Res> {
+  factory _$$SuccessAddCameraStateCopyWith(_$SuccessAddCameraState value,
+          $Res Function(_$SuccessAddCameraState) then) =
+      __$$SuccessAddCameraStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessAddCameraStateCopyWithImpl<$Res>
+    extends _$CameraStateCopyWithImpl<$Res>
+    implements _$$SuccessAddCameraStateCopyWith<$Res> {
+  __$$SuccessAddCameraStateCopyWithImpl(_$SuccessAddCameraState _value,
+      $Res Function(_$SuccessAddCameraState) _then)
+      : super(_value, (v) => _then(v as _$SuccessAddCameraState));
+
+  @override
+  _$SuccessAddCameraState get _value => super._value as _$SuccessAddCameraState;
+}
+
+/// @nodoc
+
+class _$SuccessAddCameraState implements SuccessAddCameraState {
+  const _$SuccessAddCameraState();
+
+  @override
+  String toString() {
+    return 'CameraState.successAddCamera()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SuccessAddCameraState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cameraInit,
+    required TResult Function() cameraLoading,
+    required TResult Function(AppErrors error, VoidCallback callback)
+        cameraError,
+    required TResult Function(List<CameraEntity> cameraEntity)
+        camerasListLoaded,
+    required TResult Function() successAddCamera,
+  }) {
+    return successAddCamera();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cameraInit,
+    TResult Function()? cameraLoading,
+    TResult Function(AppErrors error, VoidCallback callback)? cameraError,
+    TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
+  }) {
+    return successAddCamera?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cameraInit,
+    TResult Function()? cameraLoading,
+    TResult Function(AppErrors error, VoidCallback callback)? cameraError,
+    TResult Function(List<CameraEntity> cameraEntity)? camerasListLoaded,
+    TResult Function()? successAddCamera,
+    required TResult orElse(),
+  }) {
+    if (successAddCamera != null) {
+      return successAddCamera();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CameraInitState value) cameraInit,
+    required TResult Function(CameraLoadingState value) cameraLoading,
+    required TResult Function(CameraErrorState value) cameraError,
+    required TResult Function(CamerasListLoadedState value) camerasListLoaded,
+    required TResult Function(SuccessAddCameraState value) successAddCamera,
+  }) {
+    return successAddCamera(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CameraInitState value)? cameraInit,
+    TResult Function(CameraLoadingState value)? cameraLoading,
+    TResult Function(CameraErrorState value)? cameraError,
+    TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
+  }) {
+    return successAddCamera?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CameraInitState value)? cameraInit,
+    TResult Function(CameraLoadingState value)? cameraLoading,
+    TResult Function(CameraErrorState value)? cameraError,
+    TResult Function(CamerasListLoadedState value)? camerasListLoaded,
+    TResult Function(SuccessAddCameraState value)? successAddCamera,
+    required TResult orElse(),
+  }) {
+    if (successAddCamera != null) {
+      return successAddCamera(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessAddCameraState implements CameraState {
+  const factory SuccessAddCameraState() = _$SuccessAddCameraState;
 }

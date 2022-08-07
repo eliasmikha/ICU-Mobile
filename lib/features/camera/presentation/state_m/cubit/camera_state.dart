@@ -14,4 +14,6 @@ class CameraState with _$CameraState {
 	const factory CameraState.camerasListLoaded(
 		List<CameraEntity> cameraEntity,
 	) = CamerasListLoadedState;
+
+	const factory CameraState.successAddCamera(	) = SuccessAddCameraState;
 }

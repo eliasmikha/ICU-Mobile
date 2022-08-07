@@ -10,4 +10,6 @@ class DepartmentState with _$DepartmentState {
     AppErrors error,
     VoidCallback callback,
   ) = DepartmentErrorState;
+
+	const factory DepartmentState.successAddDepartment(	) = SuccessAddDepartmentState;
 }

@@ -15,4 +15,11 @@ class CameraRepository extends ICameraRepository {
 			remoteResult: await remoteDataSource.getAllCameras(),
 		);
 	}
+
+	@override
+	Future<Result<AppErrors, EmptyResponse>> addCamera(AddCameraParam param) async {
+		return executeForNoEntity(
+			remoteResult: await remoteDataSource.addCamera(param),
+		);
+	}
 }

@@ -20,14 +20,18 @@ import '../features/account/domain/usecase/login_usecase.dart' as _i26;
 import '../features/account/domain/usecase/register_usecase.dart' as _i29;
 import '../features/branch/data/datasource/ibranch_remote.dart' as _i8;
 import '../features/branch/domain/repository/ibranch_repository.dart' as _i9;
+import '../features/branch/domain/usecase/add_branch_usecase.dart' as _i32;
 import '../features/branch/domain/usecase/get_branches_list_usecase.dart'
-    as _i34;
+    as _i38;
 import '../features/camera/data/datasource/icamera_remote.dart' as _i10;
 import '../features/camera/domain/repository/icamera_repository.dart' as _i11;
-import '../features/camera/domain/usecase/get_all_cameras_usecase.dart' as _i33;
+import '../features/camera/domain/usecase/add_camera_usecase.dart' as _i33;
+import '../features/camera/domain/usecase/get_all_cameras_usecase.dart' as _i37;
 import '../features/department/data/datasource/idepartment_remote.dart' as _i12;
 import '../features/department/domain/repository/idepartment_repository.dart'
     as _i13;
+import '../features/department/domain/usecase/add_department_usecase.dart'
+    as _i34;
 import '../features/home/data/datasource/ihome_remote.dart' as _i14;
 import '../features/home/data/repository/home_repository.dart' as _i16;
 import '../features/home/domain/repository/ihome_repository.dart' as _i15;
@@ -35,17 +39,18 @@ import '../features/more/data/datasource/imore_remote.dart' as _i17;
 import '../features/more/domain/repository/imore_repository.dart' as _i18;
 import '../features/persons/data/datasource/ipersons_remote.dart' as _i19;
 import '../features/persons/domain/repository/ipersons_repository.dart' as _i20;
-import '../features/persons/domain/usecase/add_person_usecase.dart' as _i32;
+import '../features/persons/domain/usecase/add_person_usecase.dart' as _i35;
 import '../features/persons/domain/usecase/get_persons_list_usecase.dart'
-    as _i35;
+    as _i39;
 import '../features/room/data/datasource/iroom_remote.dart' as _i21;
 import '../features/room/domain/repository/iroom_repository.dart' as _i22;
+import '../features/room/domain/usecase/add_room_usecase.dart' as _i36;
 import '../features/upload/data/datasource/iupload_remote.dart' as _i23;
 import '../features/upload/domain/repository/iupload_repository.dart' as _i24;
 import '../features/upload/domain/usecase/upload_file_usecase.dart' as _i31;
-import 'modules/logger_module.dart' as _i36;
+import 'modules/logger_module.dart' as _i40;
 import 'modules/shared_preferences_module.dart'
-    as _i37; // ignore_for_file: unnecessary_lambdas
+    as _i41; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -94,17 +99,25 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       preResolve: true);
   gh.singleton<_i31.UploadFileUsecase>(
       _i31.UploadFileUsecase(get<_i24.IUploadRepository>()));
-  gh.singleton<_i32.AddPersonUsecase>(
-      _i32.AddPersonUsecase(get<_i20.IPersonsRepository>()));
-  gh.singleton<_i33.GetAllCamerasUsecase>(
-      _i33.GetAllCamerasUsecase(get<_i11.ICameraRepository>()));
-  gh.singleton<_i34.GetBranchesListUsecase>(
-      _i34.GetBranchesListUsecase(get<_i9.IBranchRepository>()));
-  gh.singleton<_i35.GetPersonsListUsecase>(
-      _i35.GetPersonsListUsecase(get<_i20.IPersonsRepository>()));
+  gh.singleton<_i32.AddBranchUsecase>(
+      _i32.AddBranchUsecase(get<_i9.IBranchRepository>()));
+  gh.singleton<_i33.AddCameraUsecase>(
+      _i33.AddCameraUsecase(get<_i11.ICameraRepository>()));
+  gh.singleton<_i34.AddDepartmentUsecase>(
+      _i34.AddDepartmentUsecase(get<_i13.IDepartmentRepository>()));
+  gh.singleton<_i35.AddPersonUsecase>(
+      _i35.AddPersonUsecase(get<_i20.IPersonsRepository>()));
+  gh.singleton<_i36.AddRoomUsecase>(
+      _i36.AddRoomUsecase(get<_i22.IRoomRepository>()));
+  gh.singleton<_i37.GetAllCamerasUsecase>(
+      _i37.GetAllCamerasUsecase(get<_i11.ICameraRepository>()));
+  gh.singleton<_i38.GetBranchesListUsecase>(
+      _i38.GetBranchesListUsecase(get<_i9.IBranchRepository>()));
+  gh.singleton<_i39.GetPersonsListUsecase>(
+      _i39.GetPersonsListUsecase(get<_i20.IPersonsRepository>()));
   return get;
 }
 
-class _$FacebookLoginModule extends _i36.FacebookLoginModule {}
+class _$FacebookLoginModule extends _i40.FacebookLoginModule {}
 
-class _$SharedPreferencesModule extends _i37.SharedPreferencesModule {}
+class _$SharedPreferencesModule extends _i41.SharedPreferencesModule {}

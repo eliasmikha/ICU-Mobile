@@ -15,4 +15,11 @@ class BranchRepository extends IBranchRepository {
 			remoteResult: await remoteDataSource.getBranchesList(param),
 		);
 	}
+
+	@override
+	Future<Result<AppErrors, EmptyResponse>> addBranch(AddBranchParam param) async {
+		return executeForNoEntity(
+			remoteResult: await remoteDataSource.addBranch(param),
+		);
+	}
 }

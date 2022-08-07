@@ -10,4 +10,6 @@ class RoomState with _$RoomState {
     AppErrors error,
     VoidCallback callback,
   ) = RoomErrorState;
+
+	const factory RoomState.successAddRoom(	) = SuccessAddRoomState;
 }

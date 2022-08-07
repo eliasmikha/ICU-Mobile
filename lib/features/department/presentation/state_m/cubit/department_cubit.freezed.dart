@@ -22,6 +22,7 @@ mixin _$DepartmentState {
     required TResult Function() departmentLoading,
     required TResult Function(AppErrors error, VoidCallback callback)
         departmentError,
+    required TResult Function() successAddDepartment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,6 +30,7 @@ mixin _$DepartmentState {
     TResult Function()? departmentInit,
     TResult Function()? departmentLoading,
     TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +38,7 @@ mixin _$DepartmentState {
     TResult Function()? departmentInit,
     TResult Function()? departmentLoading,
     TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,6 +47,8 @@ mixin _$DepartmentState {
     required TResult Function(DepartmentInitState value) departmentInit,
     required TResult Function(DepartmentLoadingState value) departmentLoading,
     required TResult Function(DepartmentErrorState value) departmentError,
+    required TResult Function(SuccessAddDepartmentState value)
+        successAddDepartment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +56,7 @@ mixin _$DepartmentState {
     TResult Function(DepartmentInitState value)? departmentInit,
     TResult Function(DepartmentLoadingState value)? departmentLoading,
     TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +64,7 @@ mixin _$DepartmentState {
     TResult Function(DepartmentInitState value)? departmentInit,
     TResult Function(DepartmentLoadingState value)? departmentLoading,
     TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,6 +132,7 @@ class _$DepartmentInitState implements DepartmentInitState {
     required TResult Function() departmentLoading,
     required TResult Function(AppErrors error, VoidCallback callback)
         departmentError,
+    required TResult Function() successAddDepartment,
   }) {
     return departmentInit();
   }
@@ -135,6 +143,7 @@ class _$DepartmentInitState implements DepartmentInitState {
     TResult Function()? departmentInit,
     TResult Function()? departmentLoading,
     TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
   }) {
     return departmentInit?.call();
   }
@@ -145,6 +154,7 @@ class _$DepartmentInitState implements DepartmentInitState {
     TResult Function()? departmentInit,
     TResult Function()? departmentLoading,
     TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
     required TResult orElse(),
   }) {
     if (departmentInit != null) {
@@ -159,6 +169,8 @@ class _$DepartmentInitState implements DepartmentInitState {
     required TResult Function(DepartmentInitState value) departmentInit,
     required TResult Function(DepartmentLoadingState value) departmentLoading,
     required TResult Function(DepartmentErrorState value) departmentError,
+    required TResult Function(SuccessAddDepartmentState value)
+        successAddDepartment,
   }) {
     return departmentInit(this);
   }
@@ -169,6 +181,7 @@ class _$DepartmentInitState implements DepartmentInitState {
     TResult Function(DepartmentInitState value)? departmentInit,
     TResult Function(DepartmentLoadingState value)? departmentLoading,
     TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
   }) {
     return departmentInit?.call(this);
   }
@@ -179,6 +192,7 @@ class _$DepartmentInitState implements DepartmentInitState {
     TResult Function(DepartmentInitState value)? departmentInit,
     TResult Function(DepartmentLoadingState value)? departmentLoading,
     TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
     required TResult orElse(),
   }) {
     if (departmentInit != null) {
@@ -238,6 +252,7 @@ class _$DepartmentLoadingState implements DepartmentLoadingState {
     required TResult Function() departmentLoading,
     required TResult Function(AppErrors error, VoidCallback callback)
         departmentError,
+    required TResult Function() successAddDepartment,
   }) {
     return departmentLoading();
   }
@@ -248,6 +263,7 @@ class _$DepartmentLoadingState implements DepartmentLoadingState {
     TResult Function()? departmentInit,
     TResult Function()? departmentLoading,
     TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
   }) {
     return departmentLoading?.call();
   }
@@ -258,6 +274,7 @@ class _$DepartmentLoadingState implements DepartmentLoadingState {
     TResult Function()? departmentInit,
     TResult Function()? departmentLoading,
     TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
     required TResult orElse(),
   }) {
     if (departmentLoading != null) {
@@ -272,6 +289,8 @@ class _$DepartmentLoadingState implements DepartmentLoadingState {
     required TResult Function(DepartmentInitState value) departmentInit,
     required TResult Function(DepartmentLoadingState value) departmentLoading,
     required TResult Function(DepartmentErrorState value) departmentError,
+    required TResult Function(SuccessAddDepartmentState value)
+        successAddDepartment,
   }) {
     return departmentLoading(this);
   }
@@ -282,6 +301,7 @@ class _$DepartmentLoadingState implements DepartmentLoadingState {
     TResult Function(DepartmentInitState value)? departmentInit,
     TResult Function(DepartmentLoadingState value)? departmentLoading,
     TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
   }) {
     return departmentLoading?.call(this);
   }
@@ -292,6 +312,7 @@ class _$DepartmentLoadingState implements DepartmentLoadingState {
     TResult Function(DepartmentInitState value)? departmentInit,
     TResult Function(DepartmentLoadingState value)? departmentLoading,
     TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
     required TResult orElse(),
   }) {
     if (departmentLoading != null) {
@@ -393,6 +414,7 @@ class _$DepartmentErrorState implements DepartmentErrorState {
     required TResult Function() departmentLoading,
     required TResult Function(AppErrors error, VoidCallback callback)
         departmentError,
+    required TResult Function() successAddDepartment,
   }) {
     return departmentError(error, callback);
   }
@@ -403,6 +425,7 @@ class _$DepartmentErrorState implements DepartmentErrorState {
     TResult Function()? departmentInit,
     TResult Function()? departmentLoading,
     TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
   }) {
     return departmentError?.call(error, callback);
   }
@@ -413,6 +436,7 @@ class _$DepartmentErrorState implements DepartmentErrorState {
     TResult Function()? departmentInit,
     TResult Function()? departmentLoading,
     TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
     required TResult orElse(),
   }) {
     if (departmentError != null) {
@@ -427,6 +451,8 @@ class _$DepartmentErrorState implements DepartmentErrorState {
     required TResult Function(DepartmentInitState value) departmentInit,
     required TResult Function(DepartmentLoadingState value) departmentLoading,
     required TResult Function(DepartmentErrorState value) departmentError,
+    required TResult Function(SuccessAddDepartmentState value)
+        successAddDepartment,
   }) {
     return departmentError(this);
   }
@@ -437,6 +463,7 @@ class _$DepartmentErrorState implements DepartmentErrorState {
     TResult Function(DepartmentInitState value)? departmentInit,
     TResult Function(DepartmentLoadingState value)? departmentLoading,
     TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
   }) {
     return departmentError?.call(this);
   }
@@ -447,6 +474,7 @@ class _$DepartmentErrorState implements DepartmentErrorState {
     TResult Function(DepartmentInitState value)? departmentInit,
     TResult Function(DepartmentLoadingState value)? departmentLoading,
     TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
     required TResult orElse(),
   }) {
     if (departmentError != null) {
@@ -466,4 +494,126 @@ abstract class DepartmentErrorState implements DepartmentState {
   @JsonKey(ignore: true)
   _$$DepartmentErrorStateCopyWith<_$DepartmentErrorState> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessAddDepartmentStateCopyWith<$Res> {
+  factory _$$SuccessAddDepartmentStateCopyWith(
+          _$SuccessAddDepartmentState value,
+          $Res Function(_$SuccessAddDepartmentState) then) =
+      __$$SuccessAddDepartmentStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessAddDepartmentStateCopyWithImpl<$Res>
+    extends _$DepartmentStateCopyWithImpl<$Res>
+    implements _$$SuccessAddDepartmentStateCopyWith<$Res> {
+  __$$SuccessAddDepartmentStateCopyWithImpl(_$SuccessAddDepartmentState _value,
+      $Res Function(_$SuccessAddDepartmentState) _then)
+      : super(_value, (v) => _then(v as _$SuccessAddDepartmentState));
+
+  @override
+  _$SuccessAddDepartmentState get _value =>
+      super._value as _$SuccessAddDepartmentState;
+}
+
+/// @nodoc
+
+class _$SuccessAddDepartmentState implements SuccessAddDepartmentState {
+  const _$SuccessAddDepartmentState();
+
+  @override
+  String toString() {
+    return 'DepartmentState.successAddDepartment()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessAddDepartmentState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() departmentInit,
+    required TResult Function() departmentLoading,
+    required TResult Function(AppErrors error, VoidCallback callback)
+        departmentError,
+    required TResult Function() successAddDepartment,
+  }) {
+    return successAddDepartment();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? departmentInit,
+    TResult Function()? departmentLoading,
+    TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
+  }) {
+    return successAddDepartment?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? departmentInit,
+    TResult Function()? departmentLoading,
+    TResult Function(AppErrors error, VoidCallback callback)? departmentError,
+    TResult Function()? successAddDepartment,
+    required TResult orElse(),
+  }) {
+    if (successAddDepartment != null) {
+      return successAddDepartment();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DepartmentInitState value) departmentInit,
+    required TResult Function(DepartmentLoadingState value) departmentLoading,
+    required TResult Function(DepartmentErrorState value) departmentError,
+    required TResult Function(SuccessAddDepartmentState value)
+        successAddDepartment,
+  }) {
+    return successAddDepartment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DepartmentInitState value)? departmentInit,
+    TResult Function(DepartmentLoadingState value)? departmentLoading,
+    TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
+  }) {
+    return successAddDepartment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DepartmentInitState value)? departmentInit,
+    TResult Function(DepartmentLoadingState value)? departmentLoading,
+    TResult Function(DepartmentErrorState value)? departmentError,
+    TResult Function(SuccessAddDepartmentState value)? successAddDepartment,
+    required TResult orElse(),
+  }) {
+    if (successAddDepartment != null) {
+      return successAddDepartment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessAddDepartmentState implements DepartmentState {
+  const factory SuccessAddDepartmentState() = _$SuccessAddDepartmentState;
 }

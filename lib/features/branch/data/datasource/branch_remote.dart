@@ -12,4 +12,14 @@ class BranchRemoteSource extends IBranchRemoteSource {
 			url: APIUrls.branchListApi(param.id),
 		);
 	}
+
+	@override
+	Future<Either<AppErrors, EmptyResponse>> addBranch(AddBranchParam param) async {
+		return await request(
+			converter: (json) => EmptyResponse.fromMap(json),
+			method: HttpMethod.POST,
+			url: APIUrls.ADD_BRANCH_API,
+			body: param.toMap(),
+		);
+	}
 }

@@ -23,6 +23,7 @@ mixin _$BranchState {
     required TResult Function(AppErrors error, VoidCallback callback)
         branchError,
     required TResult Function(BranchListEntity branchEntity) branchListLoaded,
+    required TResult Function() successAddBranch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +32,7 @@ mixin _$BranchState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +41,7 @@ mixin _$BranchState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,7 @@ mixin _$BranchState {
     required TResult Function(BranchLoadingState value) branchLoading,
     required TResult Function(BranchErrorState value) branchError,
     required TResult Function(BranchListLoadedState value) branchListLoaded,
+    required TResult Function(SuccessAddBranchState value) successAddBranch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +60,7 @@ mixin _$BranchState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,7 @@ mixin _$BranchState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,6 +137,7 @@ class _$BranchInitState implements BranchInitState {
     required TResult Function(AppErrors error, VoidCallback callback)
         branchError,
     required TResult Function(BranchListEntity branchEntity) branchListLoaded,
+    required TResult Function() successAddBranch,
   }) {
     return branchInit();
   }
@@ -142,6 +149,7 @@ class _$BranchInitState implements BranchInitState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
   }) {
     return branchInit?.call();
   }
@@ -153,6 +161,7 @@ class _$BranchInitState implements BranchInitState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
     required TResult orElse(),
   }) {
     if (branchInit != null) {
@@ -168,6 +177,7 @@ class _$BranchInitState implements BranchInitState {
     required TResult Function(BranchLoadingState value) branchLoading,
     required TResult Function(BranchErrorState value) branchError,
     required TResult Function(BranchListLoadedState value) branchListLoaded,
+    required TResult Function(SuccessAddBranchState value) successAddBranch,
   }) {
     return branchInit(this);
   }
@@ -179,6 +189,7 @@ class _$BranchInitState implements BranchInitState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
   }) {
     return branchInit?.call(this);
   }
@@ -190,6 +201,7 @@ class _$BranchInitState implements BranchInitState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
     required TResult orElse(),
   }) {
     if (branchInit != null) {
@@ -249,6 +261,7 @@ class _$BranchLoadingState implements BranchLoadingState {
     required TResult Function(AppErrors error, VoidCallback callback)
         branchError,
     required TResult Function(BranchListEntity branchEntity) branchListLoaded,
+    required TResult Function() successAddBranch,
   }) {
     return branchLoading();
   }
@@ -260,6 +273,7 @@ class _$BranchLoadingState implements BranchLoadingState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
   }) {
     return branchLoading?.call();
   }
@@ -271,6 +285,7 @@ class _$BranchLoadingState implements BranchLoadingState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
     required TResult orElse(),
   }) {
     if (branchLoading != null) {
@@ -286,6 +301,7 @@ class _$BranchLoadingState implements BranchLoadingState {
     required TResult Function(BranchLoadingState value) branchLoading,
     required TResult Function(BranchErrorState value) branchError,
     required TResult Function(BranchListLoadedState value) branchListLoaded,
+    required TResult Function(SuccessAddBranchState value) successAddBranch,
   }) {
     return branchLoading(this);
   }
@@ -297,6 +313,7 @@ class _$BranchLoadingState implements BranchLoadingState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
   }) {
     return branchLoading?.call(this);
   }
@@ -308,6 +325,7 @@ class _$BranchLoadingState implements BranchLoadingState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
     required TResult orElse(),
   }) {
     if (branchLoading != null) {
@@ -409,6 +427,7 @@ class _$BranchErrorState implements BranchErrorState {
     required TResult Function(AppErrors error, VoidCallback callback)
         branchError,
     required TResult Function(BranchListEntity branchEntity) branchListLoaded,
+    required TResult Function() successAddBranch,
   }) {
     return branchError(error, callback);
   }
@@ -420,6 +439,7 @@ class _$BranchErrorState implements BranchErrorState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
   }) {
     return branchError?.call(error, callback);
   }
@@ -431,6 +451,7 @@ class _$BranchErrorState implements BranchErrorState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
     required TResult orElse(),
   }) {
     if (branchError != null) {
@@ -446,6 +467,7 @@ class _$BranchErrorState implements BranchErrorState {
     required TResult Function(BranchLoadingState value) branchLoading,
     required TResult Function(BranchErrorState value) branchError,
     required TResult Function(BranchListLoadedState value) branchListLoaded,
+    required TResult Function(SuccessAddBranchState value) successAddBranch,
   }) {
     return branchError(this);
   }
@@ -457,6 +479,7 @@ class _$BranchErrorState implements BranchErrorState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
   }) {
     return branchError?.call(this);
   }
@@ -468,6 +491,7 @@ class _$BranchErrorState implements BranchErrorState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
     required TResult orElse(),
   }) {
     if (branchError != null) {
@@ -560,6 +584,7 @@ class _$BranchListLoadedState implements BranchListLoadedState {
     required TResult Function(AppErrors error, VoidCallback callback)
         branchError,
     required TResult Function(BranchListEntity branchEntity) branchListLoaded,
+    required TResult Function() successAddBranch,
   }) {
     return branchListLoaded(branchEntity);
   }
@@ -571,6 +596,7 @@ class _$BranchListLoadedState implements BranchListLoadedState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
   }) {
     return branchListLoaded?.call(branchEntity);
   }
@@ -582,6 +608,7 @@ class _$BranchListLoadedState implements BranchListLoadedState {
     TResult Function()? branchLoading,
     TResult Function(AppErrors error, VoidCallback callback)? branchError,
     TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
     required TResult orElse(),
   }) {
     if (branchListLoaded != null) {
@@ -597,6 +624,7 @@ class _$BranchListLoadedState implements BranchListLoadedState {
     required TResult Function(BranchLoadingState value) branchLoading,
     required TResult Function(BranchErrorState value) branchError,
     required TResult Function(BranchListLoadedState value) branchListLoaded,
+    required TResult Function(SuccessAddBranchState value) successAddBranch,
   }) {
     return branchListLoaded(this);
   }
@@ -608,6 +636,7 @@ class _$BranchListLoadedState implements BranchListLoadedState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
   }) {
     return branchListLoaded?.call(this);
   }
@@ -619,6 +648,7 @@ class _$BranchListLoadedState implements BranchListLoadedState {
     TResult Function(BranchLoadingState value)? branchLoading,
     TResult Function(BranchErrorState value)? branchError,
     TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
     required TResult orElse(),
   }) {
     if (branchListLoaded != null) {
@@ -636,4 +666,128 @@ abstract class BranchListLoadedState implements BranchState {
   @JsonKey(ignore: true)
   _$$BranchListLoadedStateCopyWith<_$BranchListLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessAddBranchStateCopyWith<$Res> {
+  factory _$$SuccessAddBranchStateCopyWith(_$SuccessAddBranchState value,
+          $Res Function(_$SuccessAddBranchState) then) =
+      __$$SuccessAddBranchStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessAddBranchStateCopyWithImpl<$Res>
+    extends _$BranchStateCopyWithImpl<$Res>
+    implements _$$SuccessAddBranchStateCopyWith<$Res> {
+  __$$SuccessAddBranchStateCopyWithImpl(_$SuccessAddBranchState _value,
+      $Res Function(_$SuccessAddBranchState) _then)
+      : super(_value, (v) => _then(v as _$SuccessAddBranchState));
+
+  @override
+  _$SuccessAddBranchState get _value => super._value as _$SuccessAddBranchState;
+}
+
+/// @nodoc
+
+class _$SuccessAddBranchState implements SuccessAddBranchState {
+  const _$SuccessAddBranchState();
+
+  @override
+  String toString() {
+    return 'BranchState.successAddBranch()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SuccessAddBranchState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() branchInit,
+    required TResult Function() branchLoading,
+    required TResult Function(AppErrors error, VoidCallback callback)
+        branchError,
+    required TResult Function(BranchListEntity branchEntity) branchListLoaded,
+    required TResult Function() successAddBranch,
+  }) {
+    return successAddBranch();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? branchInit,
+    TResult Function()? branchLoading,
+    TResult Function(AppErrors error, VoidCallback callback)? branchError,
+    TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
+  }) {
+    return successAddBranch?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? branchInit,
+    TResult Function()? branchLoading,
+    TResult Function(AppErrors error, VoidCallback callback)? branchError,
+    TResult Function(BranchListEntity branchEntity)? branchListLoaded,
+    TResult Function()? successAddBranch,
+    required TResult orElse(),
+  }) {
+    if (successAddBranch != null) {
+      return successAddBranch();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BranchInitState value) branchInit,
+    required TResult Function(BranchLoadingState value) branchLoading,
+    required TResult Function(BranchErrorState value) branchError,
+    required TResult Function(BranchListLoadedState value) branchListLoaded,
+    required TResult Function(SuccessAddBranchState value) successAddBranch,
+  }) {
+    return successAddBranch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BranchInitState value)? branchInit,
+    TResult Function(BranchLoadingState value)? branchLoading,
+    TResult Function(BranchErrorState value)? branchError,
+    TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
+  }) {
+    return successAddBranch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BranchInitState value)? branchInit,
+    TResult Function(BranchLoadingState value)? branchLoading,
+    TResult Function(BranchErrorState value)? branchError,
+    TResult Function(BranchListLoadedState value)? branchListLoaded,
+    TResult Function(SuccessAddBranchState value)? successAddBranch,
+    required TResult orElse(),
+  }) {
+    if (successAddBranch != null) {
+      return successAddBranch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessAddBranchState implements BranchState {
+  const factory SuccessAddBranchState() = _$SuccessAddBranchState;
 }

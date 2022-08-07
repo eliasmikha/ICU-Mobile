@@ -13,4 +13,14 @@ class CameraRemoteSource extends ICameraRemoteSource {
       createModelInterceptor: const AllDataCreateModel(),
 		);
 	}
+
+	@override
+	Future<Either<AppErrors, EmptyResponse>> addCamera(AddCameraParam param) async {
+		return await request(
+			converter: (json) => EmptyResponse.fromMap(json),
+			method: HttpMethod.POST,
+			url: APIUrls.ADD_CAMERA_API,
+			body: param.toMap(),
+		);
+	}
 }

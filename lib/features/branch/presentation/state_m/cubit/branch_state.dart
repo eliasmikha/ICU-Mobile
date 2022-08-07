@@ -14,4 +14,6 @@ class BranchState with _$BranchState {
 	const factory BranchState.branchListLoaded(
 		BranchListEntity branchEntity,
 	) = BranchListLoadedState;
+
+	const factory BranchState.successAddBranch(	) = SuccessAddBranchState;
 }

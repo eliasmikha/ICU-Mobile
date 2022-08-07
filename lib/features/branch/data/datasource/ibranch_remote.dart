@@ -1,3 +1,5 @@
+import '../../../../core/models/empty_response.dart';
+import '../request/param/add_branch_param.dart';
 import '../../../../core/params/id_param.dart';
 import '../request/model/branch_list_model.dart';
 import 'package:dartz/dartz.dart';
@@ -12,4 +14,6 @@ abstract class IBranchRemoteSource extends RemoteDataSource {
  
 
 	Future<Either<AppErrors, BranchListModel>> getBranchesList(IdParam param);
+
+	Future<Either<AppErrors, EmptyResponse>> addBranch(AddBranchParam param);
 }

@@ -21,6 +21,7 @@ mixin _$RoomState {
     required TResult Function() roomInit,
     required TResult Function() roomLoading,
     required TResult Function(AppErrors error, VoidCallback callback) roomError,
+    required TResult Function() successAddRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$RoomState {
     TResult Function()? roomInit,
     TResult Function()? roomLoading,
     TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$RoomState {
     TResult Function()? roomInit,
     TResult Function()? roomLoading,
     TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$RoomState {
     required TResult Function(RoomInitState value) roomInit,
     required TResult Function(RoomLoadingState value) roomLoading,
     required TResult Function(RoomErrorState value) roomError,
+    required TResult Function(SuccessAddRoomState value) successAddRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$RoomState {
     TResult Function(RoomInitState value)? roomInit,
     TResult Function(RoomLoadingState value)? roomLoading,
     TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$RoomState {
     TResult Function(RoomInitState value)? roomInit,
     TResult Function(RoomLoadingState value)? roomLoading,
     TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +126,7 @@ class _$RoomInitState implements RoomInitState {
     required TResult Function() roomInit,
     required TResult Function() roomLoading,
     required TResult Function(AppErrors error, VoidCallback callback) roomError,
+    required TResult Function() successAddRoom,
   }) {
     return roomInit();
   }
@@ -130,6 +137,7 @@ class _$RoomInitState implements RoomInitState {
     TResult Function()? roomInit,
     TResult Function()? roomLoading,
     TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
   }) {
     return roomInit?.call();
   }
@@ -140,6 +148,7 @@ class _$RoomInitState implements RoomInitState {
     TResult Function()? roomInit,
     TResult Function()? roomLoading,
     TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
     required TResult orElse(),
   }) {
     if (roomInit != null) {
@@ -154,6 +163,7 @@ class _$RoomInitState implements RoomInitState {
     required TResult Function(RoomInitState value) roomInit,
     required TResult Function(RoomLoadingState value) roomLoading,
     required TResult Function(RoomErrorState value) roomError,
+    required TResult Function(SuccessAddRoomState value) successAddRoom,
   }) {
     return roomInit(this);
   }
@@ -164,6 +174,7 @@ class _$RoomInitState implements RoomInitState {
     TResult Function(RoomInitState value)? roomInit,
     TResult Function(RoomLoadingState value)? roomLoading,
     TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
   }) {
     return roomInit?.call(this);
   }
@@ -174,6 +185,7 @@ class _$RoomInitState implements RoomInitState {
     TResult Function(RoomInitState value)? roomInit,
     TResult Function(RoomLoadingState value)? roomLoading,
     TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
     required TResult orElse(),
   }) {
     if (roomInit != null) {
@@ -231,6 +243,7 @@ class _$RoomLoadingState implements RoomLoadingState {
     required TResult Function() roomInit,
     required TResult Function() roomLoading,
     required TResult Function(AppErrors error, VoidCallback callback) roomError,
+    required TResult Function() successAddRoom,
   }) {
     return roomLoading();
   }
@@ -241,6 +254,7 @@ class _$RoomLoadingState implements RoomLoadingState {
     TResult Function()? roomInit,
     TResult Function()? roomLoading,
     TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
   }) {
     return roomLoading?.call();
   }
@@ -251,6 +265,7 @@ class _$RoomLoadingState implements RoomLoadingState {
     TResult Function()? roomInit,
     TResult Function()? roomLoading,
     TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
     required TResult orElse(),
   }) {
     if (roomLoading != null) {
@@ -265,6 +280,7 @@ class _$RoomLoadingState implements RoomLoadingState {
     required TResult Function(RoomInitState value) roomInit,
     required TResult Function(RoomLoadingState value) roomLoading,
     required TResult Function(RoomErrorState value) roomError,
+    required TResult Function(SuccessAddRoomState value) successAddRoom,
   }) {
     return roomLoading(this);
   }
@@ -275,6 +291,7 @@ class _$RoomLoadingState implements RoomLoadingState {
     TResult Function(RoomInitState value)? roomInit,
     TResult Function(RoomLoadingState value)? roomLoading,
     TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
   }) {
     return roomLoading?.call(this);
   }
@@ -285,6 +302,7 @@ class _$RoomLoadingState implements RoomLoadingState {
     TResult Function(RoomInitState value)? roomInit,
     TResult Function(RoomLoadingState value)? roomLoading,
     TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
     required TResult orElse(),
   }) {
     if (roomLoading != null) {
@@ -383,6 +401,7 @@ class _$RoomErrorState implements RoomErrorState {
     required TResult Function() roomInit,
     required TResult Function() roomLoading,
     required TResult Function(AppErrors error, VoidCallback callback) roomError,
+    required TResult Function() successAddRoom,
   }) {
     return roomError(error, callback);
   }
@@ -393,6 +412,7 @@ class _$RoomErrorState implements RoomErrorState {
     TResult Function()? roomInit,
     TResult Function()? roomLoading,
     TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
   }) {
     return roomError?.call(error, callback);
   }
@@ -403,6 +423,7 @@ class _$RoomErrorState implements RoomErrorState {
     TResult Function()? roomInit,
     TResult Function()? roomLoading,
     TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
     required TResult orElse(),
   }) {
     if (roomError != null) {
@@ -417,6 +438,7 @@ class _$RoomErrorState implements RoomErrorState {
     required TResult Function(RoomInitState value) roomInit,
     required TResult Function(RoomLoadingState value) roomLoading,
     required TResult Function(RoomErrorState value) roomError,
+    required TResult Function(SuccessAddRoomState value) successAddRoom,
   }) {
     return roomError(this);
   }
@@ -427,6 +449,7 @@ class _$RoomErrorState implements RoomErrorState {
     TResult Function(RoomInitState value)? roomInit,
     TResult Function(RoomLoadingState value)? roomLoading,
     TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
   }) {
     return roomError?.call(this);
   }
@@ -437,6 +460,7 @@ class _$RoomErrorState implements RoomErrorState {
     TResult Function(RoomInitState value)? roomInit,
     TResult Function(RoomLoadingState value)? roomLoading,
     TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
     required TResult orElse(),
   }) {
     if (roomError != null) {
@@ -455,4 +479,121 @@ abstract class RoomErrorState implements RoomState {
   @JsonKey(ignore: true)
   _$$RoomErrorStateCopyWith<_$RoomErrorState> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessAddRoomStateCopyWith<$Res> {
+  factory _$$SuccessAddRoomStateCopyWith(_$SuccessAddRoomState value,
+          $Res Function(_$SuccessAddRoomState) then) =
+      __$$SuccessAddRoomStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessAddRoomStateCopyWithImpl<$Res>
+    extends _$RoomStateCopyWithImpl<$Res>
+    implements _$$SuccessAddRoomStateCopyWith<$Res> {
+  __$$SuccessAddRoomStateCopyWithImpl(
+      _$SuccessAddRoomState _value, $Res Function(_$SuccessAddRoomState) _then)
+      : super(_value, (v) => _then(v as _$SuccessAddRoomState));
+
+  @override
+  _$SuccessAddRoomState get _value => super._value as _$SuccessAddRoomState;
+}
+
+/// @nodoc
+
+class _$SuccessAddRoomState implements SuccessAddRoomState {
+  const _$SuccessAddRoomState();
+
+  @override
+  String toString() {
+    return 'RoomState.successAddRoom()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SuccessAddRoomState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() roomInit,
+    required TResult Function() roomLoading,
+    required TResult Function(AppErrors error, VoidCallback callback) roomError,
+    required TResult Function() successAddRoom,
+  }) {
+    return successAddRoom();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? roomInit,
+    TResult Function()? roomLoading,
+    TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
+  }) {
+    return successAddRoom?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? roomInit,
+    TResult Function()? roomLoading,
+    TResult Function(AppErrors error, VoidCallback callback)? roomError,
+    TResult Function()? successAddRoom,
+    required TResult orElse(),
+  }) {
+    if (successAddRoom != null) {
+      return successAddRoom();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RoomInitState value) roomInit,
+    required TResult Function(RoomLoadingState value) roomLoading,
+    required TResult Function(RoomErrorState value) roomError,
+    required TResult Function(SuccessAddRoomState value) successAddRoom,
+  }) {
+    return successAddRoom(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(RoomInitState value)? roomInit,
+    TResult Function(RoomLoadingState value)? roomLoading,
+    TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
+  }) {
+    return successAddRoom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RoomInitState value)? roomInit,
+    TResult Function(RoomLoadingState value)? roomLoading,
+    TResult Function(RoomErrorState value)? roomError,
+    TResult Function(SuccessAddRoomState value)? successAddRoom,
+    required TResult orElse(),
+  }) {
+    if (successAddRoom != null) {
+      return successAddRoom(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessAddRoomState implements RoomState {
+  const factory SuccessAddRoomState() = _$SuccessAddRoomState;
 }
